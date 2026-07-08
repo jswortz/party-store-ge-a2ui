@@ -5,13 +5,13 @@
       "parts": [
         {
           "functionCall": {
-            "id": "adk-4ef8d8d9-f441-4989-916b-da7ff6cdbcb4",
+            "id": "adk-cd60f98e-1806-40de-b7dd-20919c9971a6",
             "args": {
               "agent_name": "procurement_agent"
             },
             "name": "transfer_to_agent"
           },
-          "thoughtSignature": "CqMCAY89a1-TmSzu1pM5-scY_t3naAtzngPE6G27Hx--0p76CVU9pOaym_nE3jtbOiTL46KtpfBAbKN3uzk_MzwYI9kbcN0aG6Fkjyl-1jF8V2vmTMB7ykKHnZKWfOBPiC9MAG2sL68uD8OFqRKsDfZ3rXaH8kWDcDH16Q7HKuqzmpMkNuKZxjMs678074Dt0WMxxlZTMmtO3_n5HWn2mBpybj9HqivcJZUnc0EP1A3rbxBCiX0hMIPDYx1AaifH3_-SZrSteEZ4VOQ30DzCaPrWDZsQ3qPviG6ovlVHoTqX2A2KfuFuywNU4MAtywhtsAblzOFX0VBl8YWyNp9xtP3Ddh2UjQcFxG21F1DO-nbPPRABqEZRnv0mTMa_uAfKYFKhQWq3"
+          "thoughtSignature": "CucCAY89a19xeMgNTUDPS2KBm1W1pHQRdeHVfxtllKicx2-Nu-l0hSLgtQPnw0Bir0sv-ueDEph58G280JOUzKvBMm1Jw46ko3GVrujAe5uwlH-nl_MNc2xFnZQso97A9JOnDJeW1HwVioujirBLgFvHNKdPwHxdVm9VGJkTq6nixGv3CQFJwyg8KkIIzo-E-FxAiqJ4stLCBEFbhqCRXAy06XR12YTtsQUHiRikNCOnENAupH1dg4uztyzUtCRntvzL9a4OtCMOpWu4hGQE9FBp97xzHHtzMMIFMqkyC6DfZ-9lktdT6wcBZrH332OdDZlFFFf15Sn1ta6O4yaSLTVxlB2rgsKUn8CAj1qlu_W7-QD92rpgBoDNw1ByknVrxfrxZiBhc3l6a3oT_ZM2CkpwEYJCy7IGVPDyiDQuba5UI2RheRKzUdyxbRoWW3Hzu_ibB78hNmgcpeQJa53OxgwB05-0F8SEFls="
         }
       ],
       "role": "model"
@@ -21,10 +21,10 @@
       "cacheTokensDetails": [
         {
           "modality": "TEXT",
-          "tokenCount": 9275
+          "tokenCount": 9249
         }
       ],
-      "cachedContentTokenCount": 9275,
+      "cachedContentTokenCount": 9249,
       "candidatesTokenCount": 12,
       "candidatesTokensDetails": [
         {
@@ -32,19 +32,19 @@
           "tokenCount": 12
         }
       ],
-      "promptTokenCount": 9919,
+      "promptTokenCount": 9828,
       "promptTokensDetails": [
         {
           "modality": "TEXT",
-          "tokenCount": 9919
+          "tokenCount": 9828
         }
       ],
-      "thoughtsTokenCount": 58,
-      "totalTokenCount": 9989,
+      "thoughtsTokenCount": 80,
+      "totalTokenCount": 9920,
       "trafficType": "ON_DEMAND"
     },
-    "avgLogprobs": -0.6828623612721761,
-    "invocationId": "e-39587ea0-ce66-4cf8-946c-3c6e512a9946",
+    "avgLogprobs": -1.2452975114186604,
+    "invocationId": "e-90026476-3907-457a-8216-5349cf0b24c3",
     "author": "supply_chain_agent",
     "actions": {
       "stateDelta": {},
@@ -56,15 +56,15 @@
       "path": "supply_chain_agent@1"
     },
     "longRunningToolIds": [],
-    "id": "bb02071d-e8fb-4d22-bdbf-a7a4db0c69ce",
-    "timestamp": 1783548551.6660872
+    "id": "f43a24c5-96e5-42d7-98b1-4887f990c4f2",
+    "timestamp": 1783552589.21453
   },
   {
     "content": {
       "parts": [
         {
           "functionResponse": {
-            "id": "adk-4ef8d8d9-f441-4989-916b-da7ff6cdbcb4",
+            "id": "adk-cd60f98e-1806-40de-b7dd-20919c9971a6",
             "name": "transfer_to_agent",
             "response": {
               "result": null
@@ -74,7 +74,7 @@
       ],
       "role": "user"
     },
-    "invocationId": "e-39587ea0-ce66-4cf8-946c-3c6e512a9946",
+    "invocationId": "e-90026476-3907-457a-8216-5349cf0b24c3",
     "author": "supply_chain_agent",
     "actions": {
       "stateDelta": {},
@@ -86,8 +86,8 @@
     "nodeInfo": {
       "path": "supply_chain_agent@1"
     },
-    "id": "ee834162-81cd-4583-aa07-8f1acd430f10",
-    "timestamp": 1783548552.839759
+    "id": "b218dcdf-98df-4128-bca7-9d6338748644",
+    "timestamp": 1783552590.8526828
   },
   {
     "modelVersion": "gemini-2.5-flash",
@@ -95,14 +95,14 @@
       "parts": [
         {
           "functionCall": {
-            "id": "adk-b3dfca6d-8a5f-472c-8fa9-f21ca5ecfc6e",
+            "id": "adk-c952d4e4-8c87-46a3-9a5f-c54b7081f8b8",
             "args": {
               "product_id": "halloween_skeleton",
               "quantity": 300
             },
             "name": "create_purchase_order"
           },
-          "thoughtSignature": "Cv0CAY89a18NqtJ6Q6f4qnOvj1ypJtKN9E8aC1xujreamQPIXWDwwe2UL_8f0agvnADBWmh05eUUmL5FfirVScb6NklvANnqsEK4GYhEUJhXx6iVqe0dCbDqvD57wVO8EZlzPZ3RlHB4V58PVSLFMYY-iD4uzXpTOlnNvOQtetX1cGLFAhpBWZY2ZVNxdX2QriPnTEpJllmzzIm3WGuaaFnkcsTreWk9-Rbbre89qkIM-TRvYAR9CQ1KJ81pU8e8nTkVa88lgoC9OpBzAJZwdSDvE78iUOr8Bhg6pbIEDeDFGk2gKE4VAfY2zAv-pNSYia4uPJg7ssM_UiiXn5yFbVtXbBmrlkvTjoRWapPNKa6niP1Nls1HsHYU3eLDmRCorzFhE2__z81VffglUg60otfggDVRPtRaNtasDlzXX9KHghLLoeOuui5BVUbcvX12C8vgYSVZYiplrf0NI_-LnIvukArzYLfqaRPWRefXjlyFQH_NOC4sYRkW0P6Zqk9d"
+          "thoughtSignature": "CukEAY89a18N3nzFyG0CJIIXxTMTffA7xg_o6fs58hMl9lzOTTxw_vAOU9wxd7xuEtWHVEMcTROaFfG3pliKG7T0rLKm-jonDxVQO9BlPoAR4lprzt6hMsnwD62h9fRQcTlic_-GhnsOhT7gXsGzZXFuaAjhVeN_n8Dpe7MDLNlO10pS_Rb2UPnBOer2DoWiNwVOf16rBJRHFg2wi4MtIgMAnP1x050tkbgwpbkrEWk2mRU66y_JhQl56e-mGdWq9-thxp-8sO7riB9UgirK6GwhC_dSfdXwwIzj2kpLsnkoC9lxW6l9xYLtFxcHjC7gmNJDUH2Tq7T3AQzp4E_iN6fvgL4EpO6oBsBoFx4UZHFdHu5GVb17X7fFKaKkZBySuplPQwsM6pTDLIJkfPXIIu2dbShIopuHlI9bx7uY0aYJ-5VpdxNwlQcOlPfZRAsD7uX8bLcLkNcnEC_s8cff5O4YD_ASJNRIpUrbCr0g9ZkGzQr08IYHm0Up-Eg0UejAY9oNaPu5s_2sqb1wko0fQE9lAScunaor17LfzEw8gw8LCTm0EC7_P3bKMqoP_VERiQ6melt_6DEU6SpRR7SK3aLoMc6uts2UMMO0U_jP-3MRAlmcEYR7Wtv3E-Z7eCyvHTR6GUaXwQRrxtdD9jDnuALOlEf4oYjB_KQVaRu70SzMWdx0YuN9pW9H4p0Q7E-1PGdzgGNEGRj2ZdZ6guaGzIkCi29pzQxfCBXvmi1WFGf8XdpR_EvRP-HsSDJ8-RGsn4-_AUDjPvCsnYft_Ff9-t1EwrUQvc1BglR0aXttQ9yjlMMA6KOli1V-yM8="
         }
       ],
       "role": "model"
@@ -116,19 +116,19 @@
           "tokenCount": 13
         }
       ],
-      "promptTokenCount": 9692,
+      "promptTokenCount": 9599,
       "promptTokensDetails": [
         {
           "modality": "TEXT",
-          "tokenCount": 9692
+          "tokenCount": 9599
         }
       ],
-      "thoughtsTokenCount": 85,
-      "totalTokenCount": 9790,
+      "thoughtsTokenCount": 156,
+      "totalTokenCount": 9768,
       "trafficType": "ON_DEMAND"
     },
-    "avgLogprobs": -0.5076116048372709,
-    "invocationId": "e-39587ea0-ce66-4cf8-946c-3c6e512a9946",
+    "avgLogprobs": -1.4538779625525842,
+    "invocationId": "e-90026476-3907-457a-8216-5349cf0b24c3",
     "author": "procurement_agent",
     "actions": {
       "stateDelta": {},
@@ -140,31 +140,31 @@
       "path": "supply_chain_agent@1/procurement_agent@1"
     },
     "longRunningToolIds": [],
-    "id": "1bf906a1-06a7-437a-830a-eeb73f7fcb68",
-    "timestamp": 1783548552.8601475
+    "id": "75812ae7-111b-4adc-a016-6a6dd88c5163",
+    "timestamp": 1783552590.8714035
   },
   {
     "content": {
       "parts": [
         {
           "functionResponse": {
-            "id": "adk-b3dfca6d-8a5f-472c-8fa9-f21ca5ecfc6e",
+            "id": "adk-c952d4e4-8c87-46a3-9a5f-c54b7081f8b8",
             "name": "create_purchase_order",
             "response": {
               "status": "success",
-              "po_id": "PO-258DDEE7",
+              "po_id": "PO-D6633FFF",
               "product_id": "halloween_skeleton",
               "quantity": 300,
               "order_date": "2026-07-08",
               "estimated_delivery": "2026-07-22",
-              "result": "PO PO-258DDEE7 has been placed for 300 of halloween_skeleton. Estimated delivery: 2026-07-22.\n\n<a2ui-json>[{\"beginRendering\": {\"surfaceId\": \"po-confirmation\", \"root\": \"root-layout\"}}, {\"surfaceUpdate\": {\"surfaceId\": \"po-confirmation\", \"components\": [{\"id\": \"root-layout\", \"component\": {\"Column\": {\"children\": {\"explicitList\": [\"po-title\", \"po-details\", \"po-delivery\"]}}}}, {\"id\": \"po-title\", \"component\": {\"Text\": {\"usageHint\": \"h2\", \"text\": {\"literalString\": \"Purchase Order Placed\"}}}}, {\"id\": \"po-details\", \"component\": {\"Text\": {\"text\": {\"path\": \"po_details_text\"}}}}, {\"id\": \"po-delivery\", \"component\": {\"Text\": {\"text\": {\"path\": \"delivery_text\"}}}}]}}, {\"dataModelUpdate\": {\"surfaceId\": \"po-confirmation\", \"contents\": [{\"key\": \"po_details_text\", \"valueString\": \"PO-258DDEE7: Ordered 300 of halloween_skeleton\"}, {\"key\": \"delivery_text\", \"valueString\": \"Estimated delivery: 2026-07-22\"}]}}]</a2ui-json>"
+              "a2ui_payload_str": "[{\"beginRendering\": {\"surfaceId\": \"po-confirmation\", \"root\": \"root-layout\"}}, {\"surfaceUpdate\": {\"surfaceId\": \"po-confirmation\", \"components\": [{\"id\": \"root-layout\", \"component\": {\"Card\": {\"child\": \"receipt-container\"}}}, {\"id\": \"receipt-container\", \"component\": {\"Column\": {\"children\": {\"explicitList\": [\"receipt-header-row\", \"divider-1\", \"po-details-text\", \"po-delivery-text\"]}}}}, {\"id\": \"receipt-header-row\", \"component\": {\"Row\": {\"children\": {\"explicitList\": [\"receipt-success-icon\", \"receipt-title-text\"]}, \"alignment\": \"center\", \"distribution\": \"start\"}}}, {\"id\": \"receipt-success-icon\", \"component\": {\"Icon\": {\"name\": {\"literalString\": \"check\"}}}}, {\"id\": \"receipt-title-text\", \"component\": {\"Text\": {\"usageHint\": \"h2\", \"text\": {\"literalString\": \"Order Confirmation\"}}}}, {\"id\": \"divider-1\", \"component\": {\"Divider\": {\"axis\": \"horizontal\"}}}, {\"id\": \"po-details-text\", \"component\": {\"Text\": {\"usageHint\": \"body\", \"text\": {\"path\": \"po_details_text\"}}}}, {\"id\": \"po-delivery-text\", \"component\": {\"Text\": {\"usageHint\": \"body\", \"text\": {\"path\": \"delivery_text\"}}}}]}}, {\"dataModelUpdate\": {\"surfaceId\": \"po-confirmation\", \"contents\": [{\"key\": \"po_details_text\", \"valueString\": \"**Purchase Order ID:** PO-D6633FFF\\n\\n**Product Ordered:** halloween_skeleton\\n\\n**Quantity:** 300\\n\\n**Order Date:** 2026-07-08\"}, {\"key\": \"delivery_text\", \"valueString\": \"**Estimated Delivery:** 2026-07-22\"}]}}]"
             }
           }
         }
       ],
       "role": "user"
     },
-    "invocationId": "e-39587ea0-ce66-4cf8-946c-3c6e512a9946",
+    "invocationId": "e-90026476-3907-457a-8216-5349cf0b24c3",
     "author": "procurement_agent",
     "actions": {
       "stateDelta": {},
@@ -175,42 +175,55 @@
     "nodeInfo": {
       "path": "supply_chain_agent@1/procurement_agent@1"
     },
-    "id": "7fc7e517-600f-459c-99a1-158faccf7b61",
-    "timestamp": 1783548554.1250331
+    "id": "5bc289e0-73fd-45ae-90e1-9c86be6dcaa1",
+    "timestamp": 1783552592.7440934
   },
   {
     "modelVersion": "gemini-2.5-flash",
     "content": {
       "parts": [
         {
-          "text": "Your purchase order has been placed! Here are the details:\nPO ID: PO-258DDEE7\nProduct: halloween_skeleton\nQuantity: 300\nEstimated delivery date: 2026-07-22",
-          "thoughtSignature": "CrYDAY89a1-AHt7lfKhIBz_ZyuRu5cGu-W4_oEjnX2HSSJh0-2Ctq4in_fuFcww8S9UzVFT8cM4YTQR9-mkNCtp5uPJl0oatAGNUibhbk76qcNaeBmr36aJEDVgDFe2w5XYHR1JYhyvhHYzd8YHjL156Bz4EYQ4kLCnXngFCd9EPAe1iQkLRSeBSOFWjW7ourYuPUObWxARsJ6D8fW7c6bXi1DVpRXKqifeWxxDncNF-_D71h_gZcDwOzWJHNnr7AyqfWcRI_H4HbtvHsaTppk6Up7RDv0Jb08vcQqfWYHaEqr9t_KNT5bS35IZpPQHvn7tM2eF9IIoRGM0GUFoDbEkDiw_Sp_EZ1qQdaHLwQwE3gRarkSSBYN2BoOPHIaYwQZmRj6ngBjAgwOoI_9T8SRit-2RJsd9PDEXSmY3wX9HwGIrr9tdP3NYlMXPiWUa-GSWtsB4KrTx7_cNMQVe7zHLL3tA27i6CgQ9UE2RYM3PrbYcTfb7MPwHUrrjD0kRoCrZkEKsEX99blref7lbiExan7NbymV2kQaCNvWEOjGxlxNPQ2kIXK1Go_K06_oDs7sP_oEnp8_Co"
+          "functionCall": {
+            "id": "adk-33ffee16-28e0-40ea-9914-7905f599d385",
+            "args": {
+              "a2ui_json": "[{\"beginRendering\": {\"surfaceId\": \"po-confirmation\", \"root\": \"root-layout\"}}, {\"surfaceUpdate\": {\"surfaceId\": \"po-confirmation\", \"components\": [{\"id\": \"root-layout\", \"component\": {\"Card\": {\"child\": \"receipt-container\"}}}, {\"id\": \"receipt-container\", \"component\": {\"Column\": {\"children\": {\"explicitList\": [\"receipt-header-row\", \"divider-1\", \"po-details-text\", \"po-delivery-text\"]}}}}, {\"id\": \"receipt-header-row\", \"component\": {\"Row\": {\"children\": {\"explicitList\": [\"receipt-success-icon\", \"receipt-title-text\"]}, \"alignment\": \"center\", \"distribution\": \"start\"}}}, {\"id\": \"receipt-success-icon\", \"component\": {\"Icon\": {\"name\": {\"literalString\": \"check\"}}}}, {\"id\": \"receipt-title-text\", \"component\": {\"Text\": {\"usageHint\": \"h2\", \"text\": {\"literalString\": \"Order Confirmation\"}}}}, {\"id\": \"divider-1\", \"component\": {\"Divider\": {\"axis\": \"horizontal\"}}}, {\"id\": \"po-details-text\", \"component\": {\"Text\": {\"usageHint\": \"body\", \"text\": {\"path\": \"po_details_text\"}}}}, {\"id\": \"po-delivery-text\", \"component\": {\"Text\": {\"usageHint\": \"body\", \"text\": {\"path\": \"delivery_text\"}}}}]}}, {\"dataModelUpdate\": {\"surfaceId\": \"po-confirmation\", \"contents\": [{\"key\": \"po_details_text\", \"valueString\": \"**Purchase Order ID:** PO-D6633FFF\\n\\n**Product Ordered:** halloween_skeleton\\n\\n**Quantity:** 300\\n\\n**Order Date:** 2026-07-08\"}, {\"key\": \"delivery_text\", \"valueString\": \"**Estimated Delivery:** 2026-07-22\"}]}}]"
+            },
+            "name": "send_a2ui_json_to_client"
+          },
+          "thoughtSignature": "CqgEAY89a1_tVNHPZaSjf_So8WT0D0tVDR7RjijMOWdQ-SEuv5OfACKeJWAuER4WR-Kcv5mVTxmChfO1zlX17gHZ-EcZie0hEDzigZZtzVoe7N3v5YD8aclPViRKR6M0Jn2ufFD0jmHKC9VtlBr72p5GbjAzpjdbQJKVLJRAMi4xnAKiZejMgWaEPYbz9npdkDVyRTgOBb_YuhJSTsfJB97wtwCGCKcfTYe6DSDvwPK74ty6fa0CqW9w6tRidzAIfZ_NBZxwsKh5_q9kX0IljwA7La0xGUS9Z2rypADDzwTEi9AsZM2ycuDyf7E6qEwgN8nalVULoUwgMf2DEVajlyoBzc56nZmnSr-Z-kmScQmqLdB7PysCpAKpQ6r08b9uQgX-nKGVR_xwJ2TzYH76LAsPAW-ARVRSVvxqtrnTzaFdLPW9YYGdh4hWwrgkoY_desmh9dcLhm7dIykPlXszV19uyaY6TGfnbD7D_SAC5rnrLOwdv3Ly8yghnkUPW-76_WJf_kjHEKx9fy1ifJj6QOzfThxPTUqKS95Epb2w_3-yK0GstasY8i7H1ET5GeKvfpGC3FsnPDPrH2-T4GxH6J2WWx6r-lLVAJwfw6LiD_8QSv4xzEblEd33Luakfic1G1vPu_bUFWieVCpZCZf8WS-U3-dKEQPk8b2bVNwDnYN0ePgfu3q0x_aGaukMrOF5fBPAAu-Yy4Jdz3CFdQljW-xIeKWGaMpNKKMA"
         }
       ],
       "role": "model"
     },
     "finishReason": "STOP",
     "usageMetadata": {
-      "candidatesTokenCount": 54,
+      "cacheTokensDetails": [
+        {
+          "modality": "TEXT",
+          "tokenCount": 8673
+        }
+      ],
+      "cachedContentTokenCount": 8673,
+      "candidatesTokenCount": 450,
       "candidatesTokensDetails": [
         {
           "modality": "TEXT",
-          "tokenCount": 54
+          "tokenCount": 450
         }
       ],
-      "promptTokenCount": 10146,
+      "promptTokenCount": 10261,
       "promptTokensDetails": [
         {
           "modality": "TEXT",
-          "tokenCount": 10146
+          "tokenCount": 10261
         }
       ],
-      "thoughtsTokenCount": 122,
-      "totalTokenCount": 10322,
+      "thoughtsTokenCount": 140,
+      "totalTokenCount": 10851,
       "trafficType": "ON_DEMAND"
     },
-    "avgLogprobs": -0.3419833713107639,
-    "invocationId": "e-39587ea0-ce66-4cf8-946c-3c6e512a9946",
+    "avgLogprobs": -0.060427797105577254,
+    "invocationId": "e-90026476-3907-457a-8216-5349cf0b24c3",
     "author": "procurement_agent",
     "actions": {
       "stateDelta": {},
@@ -221,7 +234,38 @@
     "nodeInfo": {
       "path": "supply_chain_agent@1/procurement_agent@1"
     },
-    "id": "10411df7-4811-4402-8105-06ac6cc19cb0",
-    "timestamp": 1783548554.1484017
+    "longRunningToolIds": [],
+    "id": "cb00c55a-d97d-44db-8139-d73a863fce62",
+    "timestamp": 1783552592.763013
+  },
+  {
+    "content": {
+      "parts": [
+        {
+          "inlineData": {
+            "data": "PGEyYV9kYXRhcGFydF9qc29uPnsia2luZCI6ImRhdGEiLCJtZXRhZGF0YSI6eyJtaW1lVHlwZSI6ImFwcGxpY2F0aW9uL2pzb24rYTJ1aSJ9LCJkYXRhIjpbeyJiZWdpblJlbmRlcmluZyI6eyJzdXJmYWNlSWQiOiJwby1jb25maXJtYXRpb24iLCJyb290Ijoicm9vdC1sYXlvdXQifX0seyJzdXJmYWNlVXBkYXRlIjp7InN1cmZhY2VJZCI6InBvLWNvbmZpcm1hdGlvbiIsImNvbXBvbmVudHMiOlt7ImlkIjoicm9vdC1sYXlvdXQiLCJjb21wb25lbnQiOnsiQ2FyZCI6eyJjaGlsZCI6InJlY2VpcHQtY29udGFpbmVyIn19fSx7ImlkIjoicmVjZWlwdC1jb250YWluZXIiLCJjb21wb25lbnQiOnsiQ29sdW1uIjp7ImNoaWxkcmVuIjp7ImV4cGxpY2l0TGlzdCI6WyJyZWNlaXB0LWhlYWRlci1yb3ciLCJkaXZpZGVyLTEiLCJwby1kZXRhaWxzLXRleHQiLCJwby1kZWxpdmVyeS10ZXh0Il19fX19LHsiaWQiOiJyZWNlaXB0LWhlYWRlci1yb3ciLCJjb21wb25lbnQiOnsiUm93Ijp7ImNoaWxkcmVuIjp7ImV4cGxpY2l0TGlzdCI6WyJyZWNlaXB0LXN1Y2Nlc3MtaWNvbiIsInJlY2VpcHQtdGl0bGUtdGV4dCJdfSwiYWxpZ25tZW50IjoiY2VudGVyIiwiZGlzdHJpYnV0aW9uIjoic3RhcnQifX19LHsiaWQiOiJyZWNlaXB0LXN1Y2Nlc3MtaWNvbiIsImNvbXBvbmVudCI6eyJJY29uIjp7Im5hbWUiOnsibGl0ZXJhbFN0cmluZyI6ImNoZWNrIn19fX0seyJpZCI6InJlY2VpcHQtdGl0bGUtdGV4dCIsImNvbXBvbmVudCI6eyJUZXh0Ijp7InVzYWdlSGludCI6ImgyIiwidGV4dCI6eyJsaXRlcmFsU3RyaW5nIjoiT3JkZXIgQ29uZmlybWF0aW9uIn19fX0seyJpZCI6ImRpdmlkZXItMSIsImNvbXBvbmVudCI6eyJEaXZpZGVyIjp7ImF4aXMiOiJob3Jpem9udGFsIn19fSx7ImlkIjoicG8tZGV0YWlscy10ZXh0IiwiY29tcG9uZW50Ijp7IlRleHQiOnsidXNhZ2VIaW50IjoiYm9keSIsInRleHQiOnsicGF0aCI6InBvX2RldGFpbHNfdGV4dCJ9fX19LHsiaWQiOiJwby1kZWxpdmVyeS10ZXh0IiwiY29tcG9uZW50Ijp7IlRleHQiOnsidXNhZ2VIaW50IjoiYm9keSIsInRleHQiOnsicGF0aCI6ImRlbGl2ZXJ5X3RleHQifX19fV19fSx7ImRhdGFNb2RlbFVwZGF0ZSI6eyJzdXJmYWNlSWQiOiJwby1jb25maXJtYXRpb24iLCJjb250ZW50cyI6W3sia2V5IjoicG9fZGV0YWlsc190ZXh0IiwidmFsdWVTdHJpbmciOiIqKlB1cmNoYXNlIE9yZGVyIElEOioqIFBPLUQ2NjMzRkZGXG5cbioqUHJvZHVjdCBPcmRlcmVkOioqIGhhbGxvd2Vlbl9za2VsZXRvblxuXG4qKlF1YW50aXR5OioqIDMwMFxuXG4qKk9yZGVyIERhdGU6KiogMjAyNi0wNy0wOCJ9LHsia2V5IjoiZGVsaXZlcnlfdGV4dCIsInZhbHVlU3RyaW5nIjoiKipFc3RpbWF0ZWQgRGVsaXZlcnk6KiogMjAyNi0wNy0yMiJ9XX19XX08L2EyYV9kYXRhcGFydF9qc29uPg==",
+            "mimeType": "text/plain"
+          }
+        },
+        {
+          "text": "{\"validated_a2ui_json\": [{\"beginRendering\": {\"surfaceId\": \"po-confirmation\", \"root\": \"root-layout\"}}, {\"surfaceUpdate\": {\"surfaceId\": \"po-confirmation\", \"components\": [{\"id\": \"root-layout\", \"component\": {\"Card\": {\"child\": \"receipt-container\"}}}, {\"id\": \"receipt-container\", \"component\": {\"Column\": {\"children\": {\"explicitList\": [\"receipt-header-row\", \"divider-1\", \"po-details-text\", \"po-delivery-text\"]}}}}, {\"id\": \"receipt-header-row\", \"component\": {\"Row\": {\"children\": {\"explicitList\": [\"receipt-success-icon\", \"receipt-title-text\"]}, \"alignment\": \"center\", \"distribution\": \"start\"}}}, {\"id\": \"receipt-success-icon\", \"component\": {\"Icon\": {\"name\": {\"literalString\": \"check\"}}}}, {\"id\": \"receipt-title-text\", \"component\": {\"Text\": {\"usageHint\": \"h2\", \"text\": {\"literalString\": \"Order Confirmation\"}}}}, {\"id\": \"divider-1\", \"component\": {\"Divider\": {\"axis\": \"horizontal\"}}}, {\"id\": \"po-details-text\", \"component\": {\"Text\": {\"usageHint\": \"body\", \"text\": {\"path\": \"po_details_text\"}}}}, {\"id\": \"po-delivery-text\", \"component\": {\"Text\": {\"usageHint\": \"body\", \"text\": {\"path\": \"delivery_text\"}}}}]}}, {\"dataModelUpdate\": {\"surfaceId\": \"po-confirmation\", \"contents\": [{\"key\": \"po_details_text\", \"valueString\": \"**Purchase Order ID:** PO-D6633FFF\\n\\n**Product Ordered:** halloween_skeleton\\n\\n**Quantity:** 300\\n\\n**Order Date:** 2026-07-08\"}, {\"key\": \"delivery_text\", \"valueString\": \"**Estimated Delivery:** 2026-07-22\"}]}}]}"
+        }
+      ],
+      "role": "user"
+    },
+    "invocationId": "e-90026476-3907-457a-8216-5349cf0b24c3",
+    "author": "procurement_agent",
+    "actions": {
+      "skipSummarization": true,
+      "stateDelta": {},
+      "artifactDelta": {},
+      "requestedAuthConfigs": {},
+      "requestedToolConfirmations": {}
+    },
+    "nodeInfo": {
+      "path": "supply_chain_agent@1/procurement_agent@1"
+    },
+    "id": "244a34e9-70a7-4aaf-ae03-d1396898cf17",
+    "timestamp": 1783552596.6572824
   }
 ]

@@ -73,12 +73,14 @@ def query_inventory_status() -> dict:
         # Construct A2UI payload
         items = []
         for i, item in enumerate(inventory):
+             icon_name = "warning" if "Low" in item["status"] else "check"
              items.append({
                  "key": f"item{i}",
                  "valueMap": [
                      {"key": "product_id", "valueString": item["product_id"]},
                      {"key": "stock_display", "valueString": f"Stock: {item['current_stock']}"},
-                     {"key": "status", "valueString": item["status"]}
+                     {"key": "status", "valueString": item["status"]},
+                     {"key": "status_icon", "valueString": icon_name}
                  ]
              })
         
@@ -100,7 +102,7 @@ def query_inventory_status() -> dict:
                       "children": {
                         "explicitList": [
                           "header-text",
-                          "inventory-list"
+                          "inventory-card"
                         ]
                       }
                     }
@@ -114,6 +116,14 @@ def query_inventory_status() -> dict:
                       "text": {
                         "literalString": "Current Inventory Status"
                       }
+                    }
+                  }
+                },
+                {
+                  "id": "inventory-card",
+                  "component": {
+                    "Card": {
+                      "child": "inventory-list"
                     }
                   }
                 },
@@ -134,15 +144,40 @@ def query_inventory_status() -> dict:
                 {
                   "id": "item-layout",
                   "component": {
+                    "Column": {
+                      "children": {
+                        "explicitList": [
+                          "item-row",
+                          "item-divider"
+                        ]
+                      }
+                    }
+                  }
+                },
+                {
+                  "id": "item-row",
+                  "component": {
                     "Row": {
                       "children": {
                         "explicitList": [
+                          "item-icon",
                           "item-name",
                           "item-stock",
                           "item-status"
                         ]
                       },
+                      "distribution": "spaceBetween",
                       "alignment": "center"
+                    }
+                  }
+                },
+                {
+                  "id": "item-icon",
+                  "component": {
+                    "Icon": {
+                      "name": {
+                        "path": "status_icon"
+                      }
                     }
                   }
                 },
@@ -150,7 +185,7 @@ def query_inventory_status() -> dict:
                   "id": "item-name",
                   "component": {
                     "Text": {
-                      "usageHint": "h3",
+                      "usageHint": "body",
                       "text": {
                         "path": "product_id"
                       }
@@ -174,6 +209,14 @@ def query_inventory_status() -> dict:
                       "text": {
                         "path": "status"
                       }
+                    }
+                  }
+                },
+                {
+                  "id": "item-divider",
+                  "component": {
+                    "Divider": {
+                      "axis": "horizontal"
                     }
                   }
                 }
@@ -347,23 +390,51 @@ def get_sales_forecast(product_id: str) -> dict:
                     "VegaChart": {
                       "spec": {
                         "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+                        "description": "Sales Forecast Chart",
+                        "width": "container",
+                        "height": 300,
                         "data": {
                           "name": "table"
                         },
-                        "mark": "line",
+                        "mark": {
+                          "type": "line",
+                          "point": {"filled": True, "size": 60},
+                          "interpolate": "monotone",
+                          "strokeWidth": 3
+                        },
                         "encoding": {
                           "x": {
                             "field": "date",
-                            "type": "temporal"
+                            "type": "temporal",
+                            "title": "Month",
+                            "axis": {
+                              "format": "%b %Y",
+                              "grid": True,
+                              "labelAngle": -30
+                            }
                           },
                           "y": {
                             "field": "sales",
-                            "type": "quantitative"
+                            "type": "quantitative",
+                            "title": "Units Sold",
+                            "axis": {
+                              "grid": True
+                            }
                           },
                           "color": {
                             "field": "type",
-                            "type": "nominal"
-                          }
+                            "type": "nominal",
+                            "title": "Data Type",
+                            "scale": {
+                              "domain": ["actual", "forecast"],
+                              "range": ["#1a73e8", "#f9ab00"]
+                            }
+                          },
+                          "tooltip": [
+                            {"field": "date", "type": "temporal", "title": "Month", "format": "%B %Y"},
+                            {"field": "sales", "type": "quantitative", "title": "Sales"},
+                            {"field": "type", "type": "nominal", "title": "Type"}
+                          ]
                         }
                       }
                     }
@@ -427,32 +498,75 @@ def create_purchase_order(product_id: str, quantity: int) -> dict:
             {
               "id": "root-layout",
               "component": {
+                "Card": {
+                  "child": "receipt-container"
+                }
+              }
+            },
+            {
+              "id": "receipt-container",
+              "component": {
                 "Column": {
                   "children": {
                     "explicitList": [
-                      "po-title",
-                      "po-details",
-                      "po-delivery"
+                      "receipt-header-row",
+                      "divider-1",
+                      "po-details-text",
+                      "po-delivery-text"
                     ]
                   }
                 }
               }
             },
             {
-              "id": "po-title",
+              "id": "receipt-header-row",
               "component": {
-                "Text": {
-                  "usageHint": "h2",
-                  "text": {
-                    "literalString": "Purchase Order Placed"
+                "Row": {
+                  "children": {
+                    "explicitList": [
+                      "receipt-success-icon",
+                      "receipt-title-text"
+                    ]
+                  },
+                  "alignment": "center",
+                  "distribution": "start"
+                }
+              }
+            },
+            {
+              "id": "receipt-success-icon",
+              "component": {
+                "Icon": {
+                  "name": {
+                    "literalString": "check"
                   }
                 }
               }
             },
             {
-              "id": "po-details",
+              "id": "receipt-title-text",
               "component": {
                 "Text": {
+                  "usageHint": "h2",
+                  "text": {
+                    "literalString": "Order Confirmation"
+                  }
+                }
+              }
+            },
+            {
+              "id": "divider-1",
+              "component": {
+                "Divider": {
+                  "axis": "horizontal"
+                }
+              }
+            },
+            {
+              "id": "po-details-text",
+              "component": {
+                "Text": {
+                  "usageHint": "body",
                   "text": {
                     "path": "po_details_text"
                   }
@@ -460,9 +574,10 @@ def create_purchase_order(product_id: str, quantity: int) -> dict:
               }
             },
             {
-              "id": "po-delivery",
+              "id": "po-delivery-text",
               "component": {
                 "Text": {
+                  "usageHint": "body",
                   "text": {
                     "path": "delivery_text"
                   }
@@ -478,11 +593,11 @@ def create_purchase_order(product_id: str, quantity: int) -> dict:
           "contents": [
             {
               "key": "po_details_text",
-              "valueString": f"{po_id}: Ordered {quantity} of {product_id}"
+              "valueString": f"**Purchase Order ID:** {po_id}\n\n**Product Ordered:** {product_id}\n\n**Quantity:** {quantity}\n\n**Order Date:** {order_date}"
             },
             {
               "key": "delivery_text",
-              "valueString": f"Estimated delivery: {estimated_delivery}"
+              "valueString": f"**Estimated Delivery:** {estimated_delivery}"
             }
           ]
         }
