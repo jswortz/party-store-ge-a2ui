@@ -1,0 +1,232 @@
+[
+  {
+    "beginRendering": {
+      "surfaceId": "sales-forecast",
+      "root": "root-layout"
+    }
+  },
+  {
+    "surfaceUpdate": {
+      "surfaceId": "sales-forecast",
+      "components": [
+        {
+          "id": "root-layout",
+          "component": {
+            "Column": {
+              "children": {
+                "explicitList": [
+                  "header-text",
+                  "forecast-chart"
+                ]
+              }
+            }
+          }
+        },
+        {
+          "id": "header-text",
+          "component": {
+            "Text": {
+              "usageHint": "h1",
+              "text": {
+                "literalString": "Sales Forecast (Next 6 Months)"
+              }
+            }
+          }
+        },
+        {
+          "id": "forecast-chart",
+          "component": {
+            "VegaChart": {
+              "spec": {
+                "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+                "data": {
+                  "name": "table"
+                },
+                "mark": "line",
+                "encoding": {
+                  "x": {
+                    "field": "date",
+                    "type": "temporal"
+                  },
+                  "y": {
+                    "field": "sales",
+                    "type": "quantitative"
+                  },
+                  "color": {
+                    "field": "type",
+                    "type": "nominal"
+                  }
+                }
+              }
+            }
+          }
+        }
+      ]
+    }
+  },
+  {
+    "dataModelUpdate": {
+      "surfaceId": "sales-forecast",
+      "contents": [
+        {
+          "key": "table",
+          "valueMap": [
+            {
+              "key": "0",
+              "valueMap": [
+                {
+                  "key": "date",
+                  "valueString": "2025-01"
+                },
+                {
+                  "key": "sales",
+                  "valueNumber": 12
+                },
+                {
+                  "key": "type",
+                  "valueString": "actual"
+                }
+              ]
+            },
+            {
+              "key": "1",
+              "valueMap": [
+                {
+                  "key": "date",
+                  "valueString": "2025-09"
+                },
+                {
+                  "key": "sales",
+                  "valueNumber": 71
+                },
+                {
+                  "key": "type",
+                  "valueString": "actual"
+                }
+              ]
+            },
+            {
+              "key": "2",
+              "valueMap": [
+                {
+                  "key": "date",
+                  "valueString": "2025-10"
+                },
+                {
+                  "key": "sales",
+                  "valueNumber": 243
+                },
+                {
+                  "key": "type",
+                  "valueString": "actual"
+                }
+              ]
+            },
+            {
+              "key": "3",
+              "valueMap": [
+                {
+                  "key": "date",
+                  "valueString": "2026-07"
+                },
+                {
+                  "key": "sales",
+                  "valueNumber": 5
+                },
+                {
+                  "key": "type",
+                  "valueString": "forecast"
+                }
+              ]
+            },
+            {
+              "key": "4",
+              "valueMap": [
+                {
+                  "key": "date",
+                  "valueString": "2026-08"
+                },
+                {
+                  "key": "sales",
+                  "valueNumber": 5
+                },
+                {
+                  "key": "type",
+                  "valueString": "forecast"
+                }
+              ]
+            },
+            {
+              "key": "5",
+              "valueMap": [
+                {
+                  "key": "date",
+                  "valueString": "2026-09"
+                },
+                {
+                  "key": "sales",
+                  "valueNumber": 78
+                },
+                {
+                  "key": "type",
+                  "valueString": "forecast"
+                }
+              ]
+            },
+            {
+              "key": "6",
+              "valueMap": [
+                {
+                  "key": "date",
+                  "valueString": "2026-10"
+                },
+                {
+                  "key": "sales",
+                  "valueNumber": 267
+                },
+                {
+                  "key": "type",
+                  "valueString": "forecast"
+                }
+              ]
+            },
+            {
+              "key": "7",
+              "valueMap": [
+                {
+                  "key": "date",
+                  "valueString": "2026-11"
+                },
+                {
+                  "key": "sales",
+                  "valueNumber": 5
+                },
+                {
+                  "key": "type",
+                  "valueString": "forecast"
+                }
+              ]
+            },
+            {
+              "key": "8",
+              "valueMap": [
+                {
+                  "key": "date",
+                  "valueString": "2026-12"
+                },
+                {
+                  "key": "sales",
+                  "valueNumber": 5
+                },
+                {
+                  "key": "type",
+                  "valueString": "forecast"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  }
+]

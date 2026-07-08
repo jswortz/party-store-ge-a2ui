@@ -1,0 +1,227 @@
+[
+  {
+    "modelVersion": "gemini-2.5-flash",
+    "content": {
+      "parts": [
+        {
+          "functionCall": {
+            "id": "adk-4ef8d8d9-f441-4989-916b-da7ff6cdbcb4",
+            "args": {
+              "agent_name": "procurement_agent"
+            },
+            "name": "transfer_to_agent"
+          },
+          "thoughtSignature": "CqMCAY89a1-TmSzu1pM5-scY_t3naAtzngPE6G27Hx--0p76CVU9pOaym_nE3jtbOiTL46KtpfBAbKN3uzk_MzwYI9kbcN0aG6Fkjyl-1jF8V2vmTMB7ykKHnZKWfOBPiC9MAG2sL68uD8OFqRKsDfZ3rXaH8kWDcDH16Q7HKuqzmpMkNuKZxjMs678074Dt0WMxxlZTMmtO3_n5HWn2mBpybj9HqivcJZUnc0EP1A3rbxBCiX0hMIPDYx1AaifH3_-SZrSteEZ4VOQ30DzCaPrWDZsQ3qPviG6ovlVHoTqX2A2KfuFuywNU4MAtywhtsAblzOFX0VBl8YWyNp9xtP3Ddh2UjQcFxG21F1DO-nbPPRABqEZRnv0mTMa_uAfKYFKhQWq3"
+        }
+      ],
+      "role": "model"
+    },
+    "finishReason": "STOP",
+    "usageMetadata": {
+      "cacheTokensDetails": [
+        {
+          "modality": "TEXT",
+          "tokenCount": 9275
+        }
+      ],
+      "cachedContentTokenCount": 9275,
+      "candidatesTokenCount": 12,
+      "candidatesTokensDetails": [
+        {
+          "modality": "TEXT",
+          "tokenCount": 12
+        }
+      ],
+      "promptTokenCount": 9919,
+      "promptTokensDetails": [
+        {
+          "modality": "TEXT",
+          "tokenCount": 9919
+        }
+      ],
+      "thoughtsTokenCount": 58,
+      "totalTokenCount": 9989,
+      "trafficType": "ON_DEMAND"
+    },
+    "avgLogprobs": -0.6828623612721761,
+    "invocationId": "e-39587ea0-ce66-4cf8-946c-3c6e512a9946",
+    "author": "supply_chain_agent",
+    "actions": {
+      "stateDelta": {},
+      "artifactDelta": {},
+      "requestedAuthConfigs": {},
+      "requestedToolConfirmations": {}
+    },
+    "nodeInfo": {
+      "path": "supply_chain_agent@1"
+    },
+    "longRunningToolIds": [],
+    "id": "bb02071d-e8fb-4d22-bdbf-a7a4db0c69ce",
+    "timestamp": 1783548551.6660872
+  },
+  {
+    "content": {
+      "parts": [
+        {
+          "functionResponse": {
+            "id": "adk-4ef8d8d9-f441-4989-916b-da7ff6cdbcb4",
+            "name": "transfer_to_agent",
+            "response": {
+              "result": null
+            }
+          }
+        }
+      ],
+      "role": "user"
+    },
+    "invocationId": "e-39587ea0-ce66-4cf8-946c-3c6e512a9946",
+    "author": "supply_chain_agent",
+    "actions": {
+      "stateDelta": {},
+      "artifactDelta": {},
+      "transferToAgent": "procurement_agent",
+      "requestedAuthConfigs": {},
+      "requestedToolConfirmations": {}
+    },
+    "nodeInfo": {
+      "path": "supply_chain_agent@1"
+    },
+    "id": "ee834162-81cd-4583-aa07-8f1acd430f10",
+    "timestamp": 1783548552.839759
+  },
+  {
+    "modelVersion": "gemini-2.5-flash",
+    "content": {
+      "parts": [
+        {
+          "functionCall": {
+            "id": "adk-b3dfca6d-8a5f-472c-8fa9-f21ca5ecfc6e",
+            "args": {
+              "product_id": "halloween_skeleton",
+              "quantity": 300
+            },
+            "name": "create_purchase_order"
+          },
+          "thoughtSignature": "Cv0CAY89a18NqtJ6Q6f4qnOvj1ypJtKN9E8aC1xujreamQPIXWDwwe2UL_8f0agvnADBWmh05eUUmL5FfirVScb6NklvANnqsEK4GYhEUJhXx6iVqe0dCbDqvD57wVO8EZlzPZ3RlHB4V58PVSLFMYY-iD4uzXpTOlnNvOQtetX1cGLFAhpBWZY2ZVNxdX2QriPnTEpJllmzzIm3WGuaaFnkcsTreWk9-Rbbre89qkIM-TRvYAR9CQ1KJ81pU8e8nTkVa88lgoC9OpBzAJZwdSDvE78iUOr8Bhg6pbIEDeDFGk2gKE4VAfY2zAv-pNSYia4uPJg7ssM_UiiXn5yFbVtXbBmrlkvTjoRWapPNKa6niP1Nls1HsHYU3eLDmRCorzFhE2__z81VffglUg60otfggDVRPtRaNtasDlzXX9KHghLLoeOuui5BVUbcvX12C8vgYSVZYiplrf0NI_-LnIvukArzYLfqaRPWRefXjlyFQH_NOC4sYRkW0P6Zqk9d"
+        }
+      ],
+      "role": "model"
+    },
+    "finishReason": "STOP",
+    "usageMetadata": {
+      "candidatesTokenCount": 13,
+      "candidatesTokensDetails": [
+        {
+          "modality": "TEXT",
+          "tokenCount": 13
+        }
+      ],
+      "promptTokenCount": 9692,
+      "promptTokensDetails": [
+        {
+          "modality": "TEXT",
+          "tokenCount": 9692
+        }
+      ],
+      "thoughtsTokenCount": 85,
+      "totalTokenCount": 9790,
+      "trafficType": "ON_DEMAND"
+    },
+    "avgLogprobs": -0.5076116048372709,
+    "invocationId": "e-39587ea0-ce66-4cf8-946c-3c6e512a9946",
+    "author": "procurement_agent",
+    "actions": {
+      "stateDelta": {},
+      "artifactDelta": {},
+      "requestedAuthConfigs": {},
+      "requestedToolConfirmations": {}
+    },
+    "nodeInfo": {
+      "path": "supply_chain_agent@1/procurement_agent@1"
+    },
+    "longRunningToolIds": [],
+    "id": "1bf906a1-06a7-437a-830a-eeb73f7fcb68",
+    "timestamp": 1783548552.8601475
+  },
+  {
+    "content": {
+      "parts": [
+        {
+          "functionResponse": {
+            "id": "adk-b3dfca6d-8a5f-472c-8fa9-f21ca5ecfc6e",
+            "name": "create_purchase_order",
+            "response": {
+              "status": "success",
+              "po_id": "PO-258DDEE7",
+              "product_id": "halloween_skeleton",
+              "quantity": 300,
+              "order_date": "2026-07-08",
+              "estimated_delivery": "2026-07-22",
+              "result": "PO PO-258DDEE7 has been placed for 300 of halloween_skeleton. Estimated delivery: 2026-07-22.\n\n<a2ui-json>[{\"beginRendering\": {\"surfaceId\": \"po-confirmation\", \"root\": \"root-layout\"}}, {\"surfaceUpdate\": {\"surfaceId\": \"po-confirmation\", \"components\": [{\"id\": \"root-layout\", \"component\": {\"Column\": {\"children\": {\"explicitList\": [\"po-title\", \"po-details\", \"po-delivery\"]}}}}, {\"id\": \"po-title\", \"component\": {\"Text\": {\"usageHint\": \"h2\", \"text\": {\"literalString\": \"Purchase Order Placed\"}}}}, {\"id\": \"po-details\", \"component\": {\"Text\": {\"text\": {\"path\": \"po_details_text\"}}}}, {\"id\": \"po-delivery\", \"component\": {\"Text\": {\"text\": {\"path\": \"delivery_text\"}}}}]}}, {\"dataModelUpdate\": {\"surfaceId\": \"po-confirmation\", \"contents\": [{\"key\": \"po_details_text\", \"valueString\": \"PO-258DDEE7: Ordered 300 of halloween_skeleton\"}, {\"key\": \"delivery_text\", \"valueString\": \"Estimated delivery: 2026-07-22\"}]}}]</a2ui-json>"
+            }
+          }
+        }
+      ],
+      "role": "user"
+    },
+    "invocationId": "e-39587ea0-ce66-4cf8-946c-3c6e512a9946",
+    "author": "procurement_agent",
+    "actions": {
+      "stateDelta": {},
+      "artifactDelta": {},
+      "requestedAuthConfigs": {},
+      "requestedToolConfirmations": {}
+    },
+    "nodeInfo": {
+      "path": "supply_chain_agent@1/procurement_agent@1"
+    },
+    "id": "7fc7e517-600f-459c-99a1-158faccf7b61",
+    "timestamp": 1783548554.1250331
+  },
+  {
+    "modelVersion": "gemini-2.5-flash",
+    "content": {
+      "parts": [
+        {
+          "text": "Your purchase order has been placed! Here are the details:\nPO ID: PO-258DDEE7\nProduct: halloween_skeleton\nQuantity: 300\nEstimated delivery date: 2026-07-22",
+          "thoughtSignature": "CrYDAY89a1-AHt7lfKhIBz_ZyuRu5cGu-W4_oEjnX2HSSJh0-2Ctq4in_fuFcww8S9UzVFT8cM4YTQR9-mkNCtp5uPJl0oatAGNUibhbk76qcNaeBmr36aJEDVgDFe2w5XYHR1JYhyvhHYzd8YHjL156Bz4EYQ4kLCnXngFCd9EPAe1iQkLRSeBSOFWjW7ourYuPUObWxARsJ6D8fW7c6bXi1DVpRXKqifeWxxDncNF-_D71h_gZcDwOzWJHNnr7AyqfWcRI_H4HbtvHsaTppk6Up7RDv0Jb08vcQqfWYHaEqr9t_KNT5bS35IZpPQHvn7tM2eF9IIoRGM0GUFoDbEkDiw_Sp_EZ1qQdaHLwQwE3gRarkSSBYN2BoOPHIaYwQZmRj6ngBjAgwOoI_9T8SRit-2RJsd9PDEXSmY3wX9HwGIrr9tdP3NYlMXPiWUa-GSWtsB4KrTx7_cNMQVe7zHLL3tA27i6CgQ9UE2RYM3PrbYcTfb7MPwHUrrjD0kRoCrZkEKsEX99blref7lbiExan7NbymV2kQaCNvWEOjGxlxNPQ2kIXK1Go_K06_oDs7sP_oEnp8_Co"
+        }
+      ],
+      "role": "model"
+    },
+    "finishReason": "STOP",
+    "usageMetadata": {
+      "candidatesTokenCount": 54,
+      "candidatesTokensDetails": [
+        {
+          "modality": "TEXT",
+          "tokenCount": 54
+        }
+      ],
+      "promptTokenCount": 10146,
+      "promptTokensDetails": [
+        {
+          "modality": "TEXT",
+          "tokenCount": 10146
+        }
+      ],
+      "thoughtsTokenCount": 122,
+      "totalTokenCount": 10322,
+      "trafficType": "ON_DEMAND"
+    },
+    "avgLogprobs": -0.3419833713107639,
+    "invocationId": "e-39587ea0-ce66-4cf8-946c-3c6e512a9946",
+    "author": "procurement_agent",
+    "actions": {
+      "stateDelta": {},
+      "artifactDelta": {},
+      "requestedAuthConfigs": {},
+      "requestedToolConfirmations": {}
+    },
+    "nodeInfo": {
+      "path": "supply_chain_agent@1/procurement_agent@1"
+    },
+    "id": "10411df7-4811-4402-8105-06ac6cc19cb0",
+    "timestamp": 1783548554.1484017
+  }
+]

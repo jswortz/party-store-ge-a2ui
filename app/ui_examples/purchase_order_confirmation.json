@@ -1,0 +1,75 @@
+[
+  {
+    "beginRendering": {
+      "surfaceId": "po-confirmation",
+      "root": "root-layout"
+    }
+  },
+  {
+    "surfaceUpdate": {
+      "surfaceId": "po-confirmation",
+      "components": [
+        {
+          "id": "root-layout",
+          "component": {
+            "Column": {
+              "children": {
+                "explicitList": [
+                  "po-title",
+                  "po-details",
+                  "po-delivery"
+                ]
+              }
+            }
+          }
+        },
+        {
+          "id": "po-title",
+          "component": {
+            "Text": {
+              "usageHint": "h2",
+              "text": {
+                "literalString": "Purchase Order Placed"
+              }
+            }
+          }
+        },
+        {
+          "id": "po-details",
+          "component": {
+            "Text": {
+              "text": {
+                "path": "po_details_text"
+              }
+            }
+          }
+        },
+        {
+          "id": "po-delivery",
+          "component": {
+            "Text": {
+              "text": {
+                "path": "delivery_text"
+              }
+            }
+          }
+        }
+      ]
+    }
+  },
+  {
+    "dataModelUpdate": {
+      "surfaceId": "po-confirmation",
+      "contents": [
+        {
+          "key": "po_details_text",
+          "valueString": "PO-12345: Ordered 500 of halloween_costume"
+        },
+        {
+          "key": "delivery_text",
+          "valueString": "Estimated delivery: 2026-08-01"
+        }
+      ]
+    }
+  }
+]

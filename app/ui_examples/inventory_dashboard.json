@@ -1,0 +1,145 @@
+[
+  {
+    "beginRendering": {
+      "surfaceId": "inventory-status",
+      "root": "root-layout"
+    }
+  },
+  {
+    "surfaceUpdate": {
+      "surfaceId": "inventory-status",
+      "components": [
+        {
+          "id": "root-layout",
+          "component": {
+            "Column": {
+              "children": {
+                "explicitList": [
+                  "header-text",
+                  "inventory-list"
+                ]
+              }
+            }
+          }
+        },
+        {
+          "id": "header-text",
+          "component": {
+            "Text": {
+              "usageHint": "h1",
+              "text": {
+                "literalString": "Current Inventory Status"
+              }
+            }
+          }
+        },
+        {
+          "id": "inventory-list",
+          "component": {
+            "List": {
+              "direction": "vertical",
+              "children": {
+                "template": {
+                  "componentId": "item-layout",
+                  "dataBinding": "items"
+                }
+              }
+            }
+          }
+        },
+        {
+          "id": "item-layout",
+          "component": {
+            "Row": {
+              "children": {
+                "explicitList": [
+                  "item-name",
+                  "item-stock",
+                  "item-status"
+                ]
+              },
+              "alignment": "center"
+            }
+          }
+        },
+        {
+          "id": "item-name",
+          "component": {
+            "Text": {
+              "usageHint": "h3",
+              "text": {
+                "path": "product_id"
+              }
+            }
+          }
+        },
+        {
+          "id": "item-stock",
+          "component": {
+            "Text": {
+              "text": {
+                "path": "stock_display"
+              }
+            }
+          }
+        },
+        {
+          "id": "item-status",
+          "component": {
+            "Text": {
+              "text": {
+                "path": "status"
+              }
+            }
+          }
+        }
+      ]
+    }
+  },
+  {
+    "dataModelUpdate": {
+      "surfaceId": "inventory-status",
+      "contents": [
+        {
+          "key": "items",
+          "valueMap": [
+            {
+              "key": "item1",
+              "valueMap": [
+                {
+                  "key": "product_id",
+                  "valueString": "halloween_costume"
+                },
+                {
+                  "key": "stock_display",
+                  "valueString": "Stock: 150"
+                },
+                {
+                  "key": "status",
+                  "valueString": "Low Stock (Season Coming)"
+                }
+              ]
+            },
+            {
+              "key": "item2",
+              "valueMap": [
+                {
+                  "key": "product_id",
+                  "valueString": "party_balloons"
+                },
+                {
+                  "key": "stock_display",
+                  "valueString": "Stock: 500"
+                },
+                {
+                  "key": "status",
+                  "valueString": "Good"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  }
+]
