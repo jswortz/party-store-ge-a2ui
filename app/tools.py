@@ -12,7 +12,7 @@ logger = logging.getLogger(__name__)
 def get_bq_client():
     return bigquery.Client(project=PROJECT_ID)
 
-def query_inventory_status() -> dict:
+def query_inventory_status(tool_context: ToolContext = None) -> dict:
     """Queries the current inventory status for all products from BigQuery.
     
     Calculates current stock as received shipments minus sold orders.
@@ -237,17 +237,19 @@ def query_inventory_status() -> dict:
         ]
         
         a2ui_str = json.dumps(a2ui_payload)
+        if tool_context:
+            tool_context.state["a2ui_payload_inventory"] = a2ui_str
         
         return {
             "status": "success",
             "inventory": inventory,
-            "a2ui_payload_str": a2ui_str
+            "a2ui_key": "inventory"
         }
     except Exception as e:
         logger.exception("Failed to query inventory")
         return {"status": "error", "message": str(e)}
 
-def get_sales_forecast(product_id: str) -> dict:
+def get_sales_forecast(product_id: str, tool_context: ToolContext = None) -> dict:
     """Generates sales forecast for a product for the next 6 months (Jul-Dec 2026).
     
     Uses historical sales data from BigQuery to project future sales,
@@ -457,19 +459,21 @@ def get_sales_forecast(product_id: str) -> dict:
         ]
         
         a2ui_str = json.dumps(a2ui_payload)
+        if tool_context:
+            tool_context.state["a2ui_payload_forecast"] = a2ui_str
         
         return {
             "status": "success",
             "product_id": product_id,
             "history": history_list,
             "forecast": forecast,
-            "a2ui_payload_str": a2ui_str
+            "a2ui_key": "forecast"
         }
     except Exception as e:
         logger.exception("Failed to get sales forecast")
         return {"status": "error", "message": str(e)}
 
-def create_purchase_order(product_id: str, quantity: int) -> dict:
+def create_purchase_order(product_id: str, quantity: int, tool_context: ToolContext = None) -> dict:
     """Creates a purchase order for a product. (Simulated)
     
     Args:
@@ -605,6 +609,8 @@ def create_purchase_order(product_id: str, quantity: int) -> dict:
     ]
     
     a2ui_str = json.dumps(a2ui_payload)
+    if tool_context:
+        tool_context.state["a2ui_payload_po"] = a2ui_str
     
     return {
         "status": "success",
@@ -613,5 +619,36 @@ def create_purchase_order(product_id: str, quantity: int) -> dict:
         "quantity": quantity,
         "order_date": order_date,
         "estimated_delivery": estimated_delivery,
-        "a2ui_payload_str": a2ui_str
+        "a2ui_key": "po"
     }
+
+def send_a2ui_json_to_client(a2ui_json: str, tool_context: ToolContext = None) -> dict:
+    """Sends A2UI JSON to the client to render rich UI for the user.
+
+    Args:
+        a2ui_json: Either the raw A2UI JSON string, or a lookup key ('inventory', 'forecast', 'po')
+                  representing a pre-generated payload.
+    """
+    from a2ui.parser.payload_fixer import parse_and_fix
+    from app.a2ui_config import catalog
+    
+    # 1. Resolve key if it's a lookup key
+    if a2ui_json in ["inventory", "forecast", "po"]:
+        state_key = f"a2ui_payload_{a2ui_json}"
+        actual_json = tool_context.state.get(state_key) if tool_context else None
+        if not actual_json:
+            return {"error": f"Payload for key '{a2ui_json}' not found in session state."}
+        a2ui_json = actual_json
+        
+    try:
+        # 2. Parse and Validate
+        a2ui_json_payload = parse_and_fix(a2ui_json)
+        catalog.validator.validate(a2ui_json_payload)
+        
+        if tool_context:
+            tool_context.actions.skip_summarization = True
+        
+        return {"validated_a2ui_json": a2ui_json_payload}
+    except Exception as e:
+        logger.exception("Failed to validate A2UI JSON in custom tool")
+        return {"error": f"Failed to validate A2UI: {e}"}

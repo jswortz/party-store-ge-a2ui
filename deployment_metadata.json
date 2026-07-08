@@ -2,5 +2,12 @@
   "remote_agent_runtime_id": "projects/679926387543/locations/us-east1/reasoningEngines/8056904548993728512",
   "deployment_target": "agent_runtime",
   "is_a2a": false,
-  "deployment_timestamp": "2026-07-08T23:10:18.727150+00:00"
+  "deployment_timestamp": "2026-07-08T23:47:28.685935+00:00",
+  "pending_operation": {
+    "operation_name": "projects/679926387543/locations/us-east1/reasoningEngines/8056904548993728512/operations/6568303587535880192",
+    "project": "wortz-project-352116",
+    "location": "us-east1",
+    "deployment_target": "agent_runtime",
+    "started_at": "2026-07-08T23:52:28.894359+00:00"
+  }
 }

@@ -102,3 +102,35 @@ When testing the agent (either manually in the Playground UI or watching the out
 ## Architecture & System Design
 
 For a deep dive into the sub-agent delegation workflow and the Python-driven A2UI rendering architecture, refer to the [agents.md](agents.md) documentation.
+
+---
+
+## Deployment to Gemini Enterprise
+
+The agent is deployed using standard **Vertex AI Agent Runtime** and published to **Gemini Enterprise**.
+
+### 1. Deployment Automation Script
+
+A deployment automation script is provided at [scripts/deploy_to_ge.sh](scripts/deploy_to_ge.sh). It automates the following steps:
+1. **Enable required GCP APIs**: `aiplatform`, `cloudbuild`, and `artifactregistry`.
+2. **Deploy Agent to Vertex AI Agent Runtime**: Builds a container using Cloud Build and deploys it as a Reasoning Engine:
+   ```bash
+   agents-cli deploy --project=wortz-project-352116 --region=us-east1 --deployment-target=agent_runtime
+   ```
+3. **Register Agent with Gemini Enterprise**: Links the newly deployed reasoning engine to your Gemini Enterprise application collection:
+   ```bash
+   agents-cli publish gemini-enterprise --gemini-enterprise-app-id=projects/wortz-project-352116/locations/global/collections/default_collection/engines/gemini-enterprise-17634901_1763490144996 --display-name="Party Store Supply Chain Agent"
+   ```
+
+### 2. How to Run Deployment
+
+To deploy or update the agent in production, run the script from the root directory:
+```bash
+./scripts/deploy_to_ge.sh
+```
+
+### 3. Testing Deployed Agent
+
+Once deployed, access the agent via the [Gemini Enterprise Console](https://console.cloud.google.com/gemini-enterprise/locations/global/engines/gemini-enterprise-17634901_1763490144996/overview/dashboard?project=wortz-project-352116).
+You can run the same [Interactive Demo Script](#interactive-demo-script) to verify the production A2UI card layouts and vega-lite chart components render correctly in the console.
+

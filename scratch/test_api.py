@@ -32,8 +32,11 @@ async def run_conversation():
         }
         resp1 = await client.post("/run", json=payload1)
         print("Turn 1 Status Code:", resp1.status_code)
+        print("Turn 1 Raw Response:")
+        print(resp1.text[:500] + "..." if len(resp1.text) > 500 else resp1.text)
         try:
             events = resp1.json()
+
             print("Turn 1 response snippets:")
             for event in events:
                 if event.get("content"):
@@ -62,6 +65,9 @@ async def run_conversation():
         print("Turn 2 Status Code:", resp2.status_code)
         try:
             events = resp2.json()
+            with open("scratch/turn2_events.json", "w") as f:
+                json.dump(events, f, indent=2)
+            print("Turn 2 events dumped to scratch/turn2_events.json")
             for event in events:
                 if event.get("content"):
                     for part in event["content"].get("parts", []):

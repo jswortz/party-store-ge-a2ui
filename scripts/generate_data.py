@@ -107,7 +107,7 @@ def generate_data():
             "product_id": "birthday_candles",
             "ship_date": f"2025-{month:02d}-01",
             "receive_date": f"2025-{month:02d}-05",
-            "quantity": 50
+            "quantity": 70
         })
 
     # 2026 Shipments (up to June)
@@ -127,7 +127,7 @@ def generate_data():
             "product_id": "birthday_candles",
             "ship_date": f"2026-{month:02d}-01",
             "receive_date": f"2026-{month:02d}-05",
-            "quantity": 50
+            "quantity": 70
         })
 
     # Halloween 2026 (No shipments yet! This will trigger need to reorder because stock is low and season is coming)
