@@ -90,12 +90,20 @@ When testing the agent (either manually in the Playground UI or watching the out
 1. **Query Inventory Status**
    - **Prompt:** `Show inventory status`
    - **Expected Output:** The agent responds with a text summary of current stock and displays the **Inventory Dashboard** showing a list of items and their stock status.
+
+   ![Inventory Dashboard](assets/inventory_dashboard.png)
+
 2. **Inspect Sales Forecast**
    - **Prompt:** `Show sales forecast for halloween_skeleton`
    - **Expected Output:** The agent responds with forecast numbers and displays the **Sales Forecast Chart** (a Vega-Lite line chart showing actuals vs projections).
+
+   ![Sales Forecast Chart](assets/sales_forecast.png)
+
 3. **Place Purchase Order (Delegated)**
    - **Prompt:** `Order 300 halloween_skeletons`
    - **Expected Output:** The parent agent delegates the order to the `procurement_agent` sub-agent. The sub-agent places the order, returns a text confirmation with PO details, and displays the **Purchase Order Confirmation Card**.
+
+   ![Purchase Order Confirmation](assets/po_confirmation.png)
 
 ---
 
