@@ -11,3 +11,4 @@ create_params:
   include_data_ingestion: false
   datastore: none
   agent_guidance_filename: GEMINI.md
+  is_a2a: true

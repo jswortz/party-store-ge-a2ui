@@ -26,12 +26,12 @@ resource "google_vertex_ai_reasoning_engine" "app" {
   project      = var.project_id
 
   spec {
-    agent_framework = "google-adk"
+    agent_framework = "a2a"
     service_account = google_service_account.app_sa.email
 
     deployment_spec {
       min_instances         = 1
-      max_instances         = 10
+      max_instances         = 1
       container_concurrency = 9
 
       resource_limits = {

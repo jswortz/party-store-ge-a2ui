@@ -12,12 +12,10 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-import json
 import logging
 
 from google.adk.events.event import Event
 from google.adk.plugins.base_plugin import BasePlugin
-from google.genai import types
 
 logger = logging.getLogger(__name__)
 
@@ -59,7 +57,7 @@ class A2uiRendererPlugin(BasePlugin):
                     response = part.function_response.response or {}
                     a2ui_json_payload = response.get("validated_a2ui_json")
                     if a2ui_json_payload:
-                        logger.info("A2uiRendererPlugin: Converting validated_a2ui_json payload to A2A tag...")
+                        logger.info("A2uiRendererPlugin: Standardizing surfaceId to canvas-surface...")
                         # Standardize all surfaceId properties to "canvas-surface" so the Gemini Enterprise panel renders them
                         if isinstance(a2ui_json_payload, list):
                             for cmd in a2ui_json_payload:
@@ -71,28 +69,9 @@ class A2uiRendererPlugin(BasePlugin):
                                     if "dataModelUpdate" in cmd and isinstance(cmd["dataModelUpdate"], dict):
                                         cmd["dataModelUpdate"]["surfaceId"] = "canvas-surface"
 
-                        # Construct the A2A DataPart structure expected by the client
-                        data_part = {
-                            "kind": "data",
-                            "metadata": {"mimeType": "application/json+a2ui"},
-                            "data": a2ui_json_payload,
-                        }
-
-                        # Serialize and wrap in A2A tag
-                        part_json = json.dumps(data_part, separators=(",", ":"))
-                        wrapped_data = (
-                            b"<a2a_datapart_json>"
-                            + part_json.encode("utf-8")
-                            + b"</a2a_datapart_json>"
-                        )
-
-                        # Create the new inline_data part
-                        new_part = types.Part(
-                            inline_data=types.Blob(
-                                mime_type="text/plain", data=wrapped_data
-                            )
-                        )
-                        new_parts.append(new_part)
+                        response["validated_a2ui_json"] = a2ui_json_payload
+                        part.function_response.response = response
+                        new_parts.append(part)
                         modified = True
                         continue
                 elif (

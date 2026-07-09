@@ -1,0 +1,257 @@
+[
+  {
+    "modelVersion": "gemini-2.5-flash",
+    "content": {
+      "parts": [
+        {
+          "functionCall": {
+            "id": "adk-d0756147-ac68-4c2c-ab2f-328d5e69d1f3",
+            "args": {
+              "product_id": "halloween_skeleton"
+            },
+            "name": "get_sales_forecast"
+          },
+          "thoughtSignature": "CowDAY89a19cLodBKjKssErWkV3YNetpNdxfG9zhSwk6fxZKrxVqk3yZ_eeR2SZ10_mV7l-VCEIMI3pYPNg1CFqW-l_ulHHyQb5ud8wc6JFSpjj5zfjN6u1B0UEkrDLjAiYVoRwbdiFqAMxkUYTRRL65r0Uc8kllvOgQ7Mgsbsu5GiQjK8lNCO1YHpbJhdeeP5k0GIDJlB3jcVB8H-ybyREEcEYrDPFMBfnF2rP8h5Bg3AgXFUF6PCWgSM5mqHouuB2MKj1FVTBsOd36QOjB-qPYzUiQOiM_cN4sXybOevNghWLXrdTUzlPStDzmn3JIgXoIVn5jDQjCWM7jUgHTLjOeJLOextBMNXI3czMwC2XX487xEHyohlkbMcbPXrtU05GYI8EnEbmJ4-taf8DGcoIIOijEeh_24j2ywi7fgpQMIbvUVJsYXBmIWqYRe-YYl3YmYZrIwvwRLxZAxkJUU47oYU0uqg2vkZ0kus34ppLPlTqXaBovZx0WkV5Jiw2LMH92q13NohB4o4M0PKI6"
+        }
+      ],
+      "role": "model"
+    },
+    "finishReason": "STOP",
+    "usageMetadata": {
+      "candidatesTokenCount": 11,
+      "candidatesTokensDetails": [
+        {
+          "modality": "TEXT",
+          "tokenCount": 11
+        }
+      ],
+      "promptTokenCount": 1819,
+      "promptTokensDetails": [
+        {
+          "modality": "TEXT",
+          "tokenCount": 1819
+        }
+      ],
+      "thoughtsTokenCount": 93,
+      "totalTokenCount": 1923,
+      "trafficType": "ON_DEMAND"
+    },
+    "avgLogprobs": -1.048894622109153,
+    "invocationId": "e-944787e9-8db6-41f0-9644-1e6809ba2d7e",
+    "author": "supply_chain_agent",
+    "actions": {
+      "stateDelta": {},
+      "artifactDelta": {},
+      "requestedAuthConfigs": {},
+      "requestedToolConfirmations": {}
+    },
+    "nodeInfo": {
+      "path": "supply_chain_agent@1"
+    },
+    "longRunningToolIds": [],
+    "id": "45a18851-56b8-432d-8f4e-18bd43c5db12",
+    "timestamp": 1783554879.0266728
+  },
+  {
+    "content": {
+      "parts": [
+        {
+          "functionResponse": {
+            "id": "adk-d0756147-ac68-4c2c-ab2f-328d5e69d1f3",
+            "name": "get_sales_forecast",
+            "response": {
+              "status": "success",
+              "product_id": "halloween_skeleton",
+              "history": [
+                {
+                  "date": "2025-02",
+                  "sales": 10,
+                  "type": "actual"
+                },
+                {
+                  "date": "2025-03",
+                  "sales": 7,
+                  "type": "actual"
+                },
+                {
+                  "date": "2025-05",
+                  "sales": 7,
+                  "type": "actual"
+                },
+                {
+                  "date": "2025-06",
+                  "sales": 6,
+                  "type": "actual"
+                },
+                {
+                  "date": "2025-07",
+                  "sales": 1,
+                  "type": "actual"
+                },
+                {
+                  "date": "2025-09",
+                  "sales": 53,
+                  "type": "actual"
+                },
+                {
+                  "date": "2025-10",
+                  "sales": 270,
+                  "type": "actual"
+                },
+                {
+                  "date": "2025-11",
+                  "sales": 1,
+                  "type": "actual"
+                },
+                {
+                  "date": "2026-02",
+                  "sales": 11,
+                  "type": "actual"
+                }
+              ],
+              "forecast": [
+                {
+                  "date": "2026-07",
+                  "sales": 1,
+                  "type": "forecast"
+                },
+                {
+                  "date": "2026-08",
+                  "sales": 5,
+                  "type": "forecast"
+                },
+                {
+                  "date": "2026-09",
+                  "sales": 58,
+                  "type": "forecast"
+                },
+                {
+                  "date": "2026-10",
+                  "sales": 297,
+                  "type": "forecast"
+                },
+                {
+                  "date": "2026-11",
+                  "sales": 1,
+                  "type": "forecast"
+                },
+                {
+                  "date": "2026-12",
+                  "sales": 5,
+                  "type": "forecast"
+                }
+              ],
+              "a2ui_key": "forecast"
+            }
+          }
+        }
+      ],
+      "role": "user"
+    },
+    "invocationId": "e-944787e9-8db6-41f0-9644-1e6809ba2d7e",
+    "author": "supply_chain_agent",
+    "actions": {
+      "stateDelta": {
+        "a2ui_payload_forecast": "[{\"beginRendering\": {\"surfaceId\": \"sales-forecast\", \"root\": \"root-layout\"}}, {\"surfaceUpdate\": {\"surfaceId\": \"sales-forecast\", \"components\": [{\"id\": \"root-layout\", \"component\": {\"Column\": {\"children\": {\"explicitList\": [\"header-text\", \"forecast-chart\"]}}}}, {\"id\": \"header-text\", \"component\": {\"Text\": {\"usageHint\": \"h1\", \"text\": {\"literalString\": \"Sales Forecast: halloween_skeleton\"}}}}, {\"id\": \"forecast-chart\", \"component\": {\"VegaChart\": {\"spec\": {\"$schema\": \"https://vega.github.io/schema/vega-lite/v5.json\", \"description\": \"Sales Forecast Chart\", \"width\": \"container\", \"height\": 300, \"data\": {\"name\": \"table\"}, \"mark\": {\"type\": \"line\", \"point\": {\"filled\": true, \"size\": 60}, \"interpolate\": \"monotone\", \"strokeWidth\": 3}, \"encoding\": {\"x\": {\"field\": \"date\", \"type\": \"temporal\", \"title\": \"Month\", \"axis\": {\"format\": \"%b %Y\", \"grid\": true, \"labelAngle\": -30}}, \"y\": {\"field\": \"sales\", \"type\": \"quantitative\", \"title\": \"Units Sold\", \"axis\": {\"grid\": true}}, \"color\": {\"field\": \"type\", \"type\": \"nominal\", \"title\": \"Data Type\", \"scale\": {\"domain\": [\"actual\", \"forecast\"], \"range\": [\"#1a73e8\", \"#f9ab00\"]}}, \"tooltip\": [{\"field\": \"date\", \"type\": \"temporal\", \"title\": \"Month\", \"format\": \"%B %Y\"}, {\"field\": \"sales\", \"type\": \"quantitative\", \"title\": \"Sales\"}, {\"field\": \"type\", \"type\": \"nominal\", \"title\": \"Type\"}]}}}}}]}}, {\"dataModelUpdate\": {\"surfaceId\": \"sales-forecast\", \"contents\": [{\"key\": \"table\", \"valueMap\": [{\"key\": \"0\", \"valueMap\": [{\"key\": \"date\", \"valueString\": \"2025-02\"}, {\"key\": \"sales\", \"valueNumber\": 10}, {\"key\": \"type\", \"valueString\": \"actual\"}]}, {\"key\": \"1\", \"valueMap\": [{\"key\": \"date\", \"valueString\": \"2025-03\"}, {\"key\": \"sales\", \"valueNumber\": 7}, {\"key\": \"type\", \"valueString\": \"actual\"}]}, {\"key\": \"2\", \"valueMap\": [{\"key\": \"date\", \"valueString\": \"2025-05\"}, {\"key\": \"sales\", \"valueNumber\": 7}, {\"key\": \"type\", \"valueString\": \"actual\"}]}, {\"key\": \"3\", \"valueMap\": [{\"key\": \"date\", \"valueString\": \"2025-06\"}, {\"key\": \"sales\", \"valueNumber\": 6}, {\"key\": \"type\", \"valueString\": \"actual\"}]}, {\"key\": \"4\", \"valueMap\": [{\"key\": \"date\", \"valueString\": \"2025-07\"}, {\"key\": \"sales\", \"valueNumber\": 1}, {\"key\": \"type\", \"valueString\": \"actual\"}]}, {\"key\": \"5\", \"valueMap\": [{\"key\": \"date\", \"valueString\": \"2025-09\"}, {\"key\": \"sales\", \"valueNumber\": 53}, {\"key\": \"type\", \"valueString\": \"actual\"}]}, {\"key\": \"6\", \"valueMap\": [{\"key\": \"date\", \"valueString\": \"2025-10\"}, {\"key\": \"sales\", \"valueNumber\": 270}, {\"key\": \"type\", \"valueString\": \"actual\"}]}, {\"key\": \"7\", \"valueMap\": [{\"key\": \"date\", \"valueString\": \"2025-11\"}, {\"key\": \"sales\", \"valueNumber\": 1}, {\"key\": \"type\", \"valueString\": \"actual\"}]}, {\"key\": \"8\", \"valueMap\": [{\"key\": \"date\", \"valueString\": \"2026-02\"}, {\"key\": \"sales\", \"valueNumber\": 11}, {\"key\": \"type\", \"valueString\": \"actual\"}]}, {\"key\": \"9\", \"valueMap\": [{\"key\": \"date\", \"valueString\": \"2026-07\"}, {\"key\": \"sales\", \"valueNumber\": 1}, {\"key\": \"type\", \"valueString\": \"forecast\"}]}, {\"key\": \"10\", \"valueMap\": [{\"key\": \"date\", \"valueString\": \"2026-08\"}, {\"key\": \"sales\", \"valueNumber\": 5}, {\"key\": \"type\", \"valueString\": \"forecast\"}]}, {\"key\": \"11\", \"valueMap\": [{\"key\": \"date\", \"valueString\": \"2026-09\"}, {\"key\": \"sales\", \"valueNumber\": 58}, {\"key\": \"type\", \"valueString\": \"forecast\"}]}, {\"key\": \"12\", \"valueMap\": [{\"key\": \"date\", \"valueString\": \"2026-10\"}, {\"key\": \"sales\", \"valueNumber\": 297}, {\"key\": \"type\", \"valueString\": \"forecast\"}]}, {\"key\": \"13\", \"valueMap\": [{\"key\": \"date\", \"valueString\": \"2026-11\"}, {\"key\": \"sales\", \"valueNumber\": 1}, {\"key\": \"type\", \"valueString\": \"forecast\"}]}, {\"key\": \"14\", \"valueMap\": [{\"key\": \"date\", \"valueString\": \"2026-12\"}, {\"key\": \"sales\", \"valueNumber\": 5}, {\"key\": \"type\", \"valueString\": \"forecast\"}]}]}]}}]"
+      },
+      "artifactDelta": {},
+      "requestedAuthConfigs": {},
+      "requestedToolConfirmations": {}
+    },
+    "nodeInfo": {
+      "path": "supply_chain_agent@1"
+    },
+    "id": "3e210417-3299-49f9-8865-9aea7f0e02e0",
+    "timestamp": 1783554883.794688
+  },
+  {
+    "modelVersion": "gemini-2.5-flash",
+    "content": {
+      "parts": [
+        {
+          "text": "Here is the sales forecast for `halloween_skeleton` for the next 6 months (July - Dec 2026):\n\n*   **July 2026**: 1 unit\n*   **August 2026**: 5 units\n*   **September 2026**: 58 units\n*   **October 2026**: 297 units\n*   **November 2026**: 1 unit\n*   **December 2026**: 5 units\n\nAs you can see, there's a significant spike in demand expected for September and October, which aligns with the Halloween season. Given that the current stock is 134, and the forecast for September and October alone is 355 units (58 + 297), I highly recommend ordering more `halloween_skeleton` to meet the anticipated demand.\n",
+          "thoughtSignature": "CsQFAY89a18cnbOTOmKirPvVrgPaeohZoarurb4z-rObBhhQ7d0OAAY4tK6lMx_0rwyNO2iIQfEHa7Le-vBzLhNYxdNdSatutd-WC95jkKUYxoZY7xKtsp_dP9I_dEMk7QWyCfy4rAAkM7dm7Iqt6AuBmbo9E6lXppxj9D7OqxuMkXEhTEKuplOdySqr0uHsGnM3og6VyRz5lP7KD3bU1k7UQgHLIdyTdXs1pCx-7NDEerMR9MHSjQacEnaNQknVP1IHwF-z5ISMkkLpi_-4WdWflHBXDJmCu3FefXlrJFvDUulQovbiJ2FJNgtYJT6T-wyWDveuG8CkexogeSAc65nJ8t8EgLEyZ-fFvojcVqr-zApzsvTiZhyMcYBNh0IBq7P4IDFZ0Gckux8e4s8QP8Wcb7mjYeaG3KveAGqfSyR3zbsLU4bqfmVI2v7Pyldw3PYDnAi_ri38Cyth2qHPm0x-XX25QtNJYTPpqvjeok19Xde8oWsh2T2Ph6SlzlCJSuUdrnLMj8jtR01DHRBpbx3OqZP60t03yf1YW6zHUTDcvwq8_MBVa795xoYmO4rWVG6Rlmk6Z8yxmDFn5o6zFSJM_5mz06Q4TVjxAyraiilh3mylO_EnCCr4V0MMEC8-CML_30uFOfoPsCyf_SVZcbPx68NUhpBsK2QOx-6pJlHdFb_wiqiOllu1PuauDQdPpOJPwIZowZNLySt2dU6Oj45HiVX8DARdB_DUbDY9rbnZmqtCQW52iUKcukPGfiuctlG05I5TsMMSQ4hsIzL1gzpZqcQpfF1qIotIWOQGEHlEX_X-fGSpMqm9j8OuoANiF4L4LjNVItr78edEVKH9Ke95i5W5F973Gr2ZyeINHROQYIWCgQyz6TQFQUmXldQGGRdJv8JAu6ONQ3SD9BdOvUlfLCdQby74Z_f6F3qK8n_1Zuusalvi"
+        },
+        {
+          "functionCall": {
+            "id": "adk-302a9277-a4d7-477c-af22-019fd6424b2c",
+            "args": {
+              "a2ui_json": "forecast"
+            },
+            "name": "send_a2ui_json_to_client"
+          }
+        }
+      ],
+      "role": "model"
+    },
+    "finishReason": "STOP",
+    "usageMetadata": {
+      "cacheTokensDetails": [
+        {
+          "modality": "TEXT",
+          "tokenCount": 2105
+        }
+      ],
+      "cachedContentTokenCount": 2105,
+      "candidatesTokenCount": 209,
+      "candidatesTokensDetails": [
+        {
+          "modality": "TEXT",
+          "tokenCount": 209
+        }
+      ],
+      "promptTokenCount": 2124,
+      "promptTokensDetails": [
+        {
+          "modality": "TEXT",
+          "tokenCount": 2124
+        }
+      ],
+      "thoughtsTokenCount": 222,
+      "totalTokenCount": 2555,
+      "trafficType": "ON_DEMAND"
+    },
+    "avgLogprobs": -0.309770355954695,
+    "invocationId": "e-944787e9-8db6-41f0-9644-1e6809ba2d7e",
+    "author": "supply_chain_agent",
+    "actions": {
+      "stateDelta": {},
+      "artifactDelta": {},
+      "requestedAuthConfigs": {},
+      "requestedToolConfirmations": {}
+    },
+    "nodeInfo": {
+      "path": "supply_chain_agent@1"
+    },
+    "longRunningToolIds": [],
+    "id": "5ebbdd39-22b7-490a-b35c-d90161493a58",
+    "timestamp": 1783554883.8162258
+  },
+  {
+    "content": {
+      "parts": [
+        {
+          "inlineData": {
+            "data": "PGEyYV9kYXRhcGFydF9qc29uPnsia2luZCI6ImRhdGEiLCJtZXRhZGF0YSI6eyJtaW1lVHlwZSI6ImFwcGxpY2F0aW9uL2pzb24rYTJ1aSJ9LCJkYXRhIjpbeyJiZWdpblJlbmRlcmluZyI6eyJzdXJmYWNlSWQiOiJjYW52YXMtc3VyZmFjZSIsInJvb3QiOiJyb290LWxheW91dCJ9fSx7InN1cmZhY2VVcGRhdGUiOnsic3VyZmFjZUlkIjoiY2FudmFzLXN1cmZhY2UiLCJjb21wb25lbnRzIjpbeyJpZCI6InJvb3QtbGF5b3V0IiwiY29tcG9uZW50Ijp7IkNvbHVtbiI6eyJjaGlsZHJlbiI6eyJleHBsaWNpdExpc3QiOlsiaGVhZGVyLXRleHQiLCJmb3JlY2FzdC1jaGFydCJdfX19fSx7ImlkIjoiaGVhZGVyLXRleHQiLCJjb21wb25lbnQiOnsiVGV4dCI6eyJ1c2FnZUhpbnQiOiJoMSIsInRleHQiOnsibGl0ZXJhbFN0cmluZyI6IlNhbGVzIEZvcmVjYXN0OiBoYWxsb3dlZW5fc2tlbGV0b24ifX19fSx7ImlkIjoiZm9yZWNhc3QtY2hhcnQiLCJjb21wb25lbnQiOnsiVmVnYUNoYXJ0Ijp7InNwZWMiOnsiJHNjaGVtYSI6Imh0dHBzOi8vdmVnYS5naXRodWIuaW8vc2NoZW1hL3ZlZ2EtbGl0ZS92NS5qc29uIiwiZGVzY3JpcHRpb24iOiJTYWxlcyBGb3JlY2FzdCBDaGFydCIsIndpZHRoIjoiY29udGFpbmVyIiwiaGVpZ2h0IjozMDAsImRhdGEiOnsibmFtZSI6InRhYmxlIn0sIm1hcmsiOnsidHlwZSI6ImxpbmUiLCJwb2ludCI6eyJmaWxsZWQiOnRydWUsInNpemUiOjYwfSwiaW50ZXJwb2xhdGUiOiJtb25vdG9uZSIsInN0cm9rZVdpZHRoIjozfSwiZW5jb2RpbmciOnsieCI6eyJmaWVsZCI6ImRhdGUiLCJ0eXBlIjoidGVtcG9yYWwiLCJ0aXRsZSI6Ik1vbnRoIiwiYXhpcyI6eyJmb3JtYXQiOiIlYiAlWSIsImdyaWQiOnRydWUsImxhYmVsQW5nbGUiOi0zMH19LCJ5Ijp7ImZpZWxkIjoic2FsZXMiLCJ0eXBlIjoicXVhbnRpdGF0aXZlIiwidGl0bGUiOiJVbml0cyBTb2xkIiwiYXhpcyI6eyJncmlkIjp0cnVlfX0sImNvbG9yIjp7ImZpZWxkIjoidHlwZSIsInR5cGUiOiJub21pbmFsIiwidGl0bGUiOiJEYXRhIFR5cGUiLCJzY2FsZSI6eyJkb21haW4iOlsiYWN0dWFsIiwiZm9yZWNhc3QiXSwicmFuZ2UiOlsiIzFhNzNlOCIsIiNmOWFiMDAiXX19LCJ0b29sdGlwIjpbeyJmaWVsZCI6ImRhdGUiLCJ0eXBlIjoidGVtcG9yYWwiLCJ0aXRsZSI6Ik1vbnRoIiwiZm9ybWF0IjoiJUIgJVkifSx7ImZpZWxkIjoic2FsZXMiLCJ0eXBlIjoicXVhbnRpdGF0aXZlIiwidGl0bGUiOiJTYWxlcyJ9LHsiZmllbGQiOiJ0eXBlIiwidHlwZSI6Im5vbWluYWwiLCJ0aXRsZSI6IlR5cGUifV19fX19fV19fSx7ImRhdGFNb2RlbFVwZGF0ZSI6eyJzdXJmYWNlSWQiOiJjYW52YXMtc3VyZmFjZSIsImNvbnRlbnRzIjpbeyJrZXkiOiJ0YWJsZSIsInZhbHVlTWFwIjpbeyJrZXkiOiIwIiwidmFsdWVNYXAiOlt7ImtleSI6ImRhdGUiLCJ2YWx1ZVN0cmluZyI6IjIwMjUtMDIifSx7ImtleSI6InNhbGVzIiwidmFsdWVOdW1iZXIiOjEwfSx7ImtleSI6InR5cGUiLCJ2YWx1ZVN0cmluZyI6ImFjdHVhbCJ9XX0seyJrZXkiOiIxIiwidmFsdWVNYXAiOlt7ImtleSI6ImRhdGUiLCJ2YWx1ZVN0cmluZyI6IjIwMjUtMDMifSx7ImtleSI6InNhbGVzIiwidmFsdWVOdW1iZXIiOjd9LHsia2V5IjoidHlwZSIsInZhbHVlU3RyaW5nIjoiYWN0dWFsIn1dfSx7ImtleSI6IjIiLCJ2YWx1ZU1hcCI6W3sia2V5IjoiZGF0ZSIsInZhbHVlU3RyaW5nIjoiMjAyNS0wNSJ9LHsia2V5Ijoic2FsZXMiLCJ2YWx1ZU51bWJlciI6N30seyJrZXkiOiJ0eXBlIiwidmFsdWVTdHJpbmciOiJhY3R1YWwifV19LHsia2V5IjoiMyIsInZhbHVlTWFwIjpbeyJrZXkiOiJkYXRlIiwidmFsdWVTdHJpbmciOiIyMDI1LTA2In0seyJrZXkiOiJzYWxlcyIsInZhbHVlTnVtYmVyIjo2fSx7ImtleSI6InR5cGUiLCJ2YWx1ZVN0cmluZyI6ImFjdHVhbCJ9XX0seyJrZXkiOiI0IiwidmFsdWVNYXAiOlt7ImtleSI6ImRhdGUiLCJ2YWx1ZVN0cmluZyI6IjIwMjUtMDcifSx7ImtleSI6InNhbGVzIiwidmFsdWVOdW1iZXIiOjF9LHsia2V5IjoidHlwZSIsInZhbHVlU3RyaW5nIjoiYWN0dWFsIn1dfSx7ImtleSI6IjUiLCJ2YWx1ZU1hcCI6W3sia2V5IjoiZGF0ZSIsInZhbHVlU3RyaW5nIjoiMjAyNS0wOSJ9LHsia2V5Ijoic2FsZXMiLCJ2YWx1ZU51bWJlciI6NTN9LHsia2V5IjoidHlwZSIsInZhbHVlU3RyaW5nIjoiYWN0dWFsIn1dfSx7ImtleSI6IjYiLCJ2YWx1ZU1hcCI6W3sia2V5IjoiZGF0ZSIsInZhbHVlU3RyaW5nIjoiMjAyNS0xMCJ9LHsia2V5Ijoic2FsZXMiLCJ2YWx1ZU51bWJlciI6MjcwfSx7ImtleSI6InR5cGUiLCJ2YWx1ZVN0cmluZyI6ImFjdHVhbCJ9XX0seyJrZXkiOiI3IiwidmFsdWVNYXAiOlt7ImtleSI6ImRhdGUiLCJ2YWx1ZVN0cmluZyI6IjIwMjUtMTEifSx7ImtleSI6InNhbGVzIiwidmFsdWVOdW1iZXIiOjF9LHsia2V5IjoidHlwZSIsInZhbHVlU3RyaW5nIjoiYWN0dWFsIn1dfSx7ImtleSI6IjgiLCJ2YWx1ZU1hcCI6W3sia2V5IjoiZGF0ZSIsInZhbHVlU3RyaW5nIjoiMjAyNi0wMiJ9LHsia2V5Ijoic2FsZXMiLCJ2YWx1ZU51bWJlciI6MTF9LHsia2V5IjoidHlwZSIsInZhbHVlU3RyaW5nIjoiYWN0dWFsIn1dfSx7ImtleSI6IjkiLCJ2YWx1ZU1hcCI6W3sia2V5IjoiZGF0ZSIsInZhbHVlU3RyaW5nIjoiMjAyNi0wNyJ9LHsia2V5Ijoic2FsZXMiLCJ2YWx1ZU51bWJlciI6MX0seyJrZXkiOiJ0eXBlIiwidmFsdWVTdHJpbmciOiJmb3JlY2FzdCJ9XX0seyJrZXkiOiIxMCIsInZhbHVlTWFwIjpbeyJrZXkiOiJkYXRlIiwidmFsdWVTdHJpbmciOiIyMDI2LTA4In0seyJrZXkiOiJzYWxlcyIsInZhbHVlTnVtYmVyIjo1fSx7ImtleSI6InR5cGUiLCJ2YWx1ZVN0cmluZyI6ImZvcmVjYXN0In1dfSx7ImtleSI6IjExIiwidmFsdWVNYXAiOlt7ImtleSI6ImRhdGUiLCJ2YWx1ZVN0cmluZyI6IjIwMjYtMDkifSx7ImtleSI6InNhbGVzIiwidmFsdWVOdW1iZXIiOjU4fSx7ImtleSI6InR5cGUiLCJ2YWx1ZVN0cmluZyI6ImZvcmVjYXN0In1dfSx7ImtleSI6IjEyIiwidmFsdWVNYXAiOlt7ImtleSI6ImRhdGUiLCJ2YWx1ZVN0cmluZyI6IjIwMjYtMTAifSx7ImtleSI6InNhbGVzIiwidmFsdWVOdW1iZXIiOjI5N30seyJrZXkiOiJ0eXBlIiwidmFsdWVTdHJpbmciOiJmb3JlY2FzdCJ9XX0seyJrZXkiOiIxMyIsInZhbHVlTWFwIjpbeyJrZXkiOiJkYXRlIiwidmFsdWVTdHJpbmciOiIyMDI2LTExIn0seyJrZXkiOiJzYWxlcyIsInZhbHVlTnVtYmVyIjoxfSx7ImtleSI6InR5cGUiLCJ2YWx1ZVN0cmluZyI6ImZvcmVjYXN0In1dfSx7ImtleSI6IjE0IiwidmFsdWVNYXAiOlt7ImtleSI6ImRhdGUiLCJ2YWx1ZVN0cmluZyI6IjIwMjYtMTIifSx7ImtleSI6InNhbGVzIiwidmFsdWVOdW1iZXIiOjV9LHsia2V5IjoidHlwZSIsInZhbHVlU3RyaW5nIjoiZm9yZWNhc3QifV19XX1dfX1dfTwvYTJhX2RhdGFwYXJ0X2pzb24-",
+            "mimeType": "text/plain"
+          }
+        }
+      ],
+      "role": "user"
+    },
+    "invocationId": "e-944787e9-8db6-41f0-9644-1e6809ba2d7e",
+    "author": "supply_chain_agent",
+    "actions": {
+      "skipSummarization": true,
+      "stateDelta": {},
+      "artifactDelta": {},
+      "requestedAuthConfigs": {},
+      "requestedToolConfirmations": {}
+    },
+    "nodeInfo": {
+      "path": "supply_chain_agent@1"
+    },
+    "id": "5fa8c23e-3257-435a-81fe-2cbcc4e2b1ab",
+    "timestamp": 1783554887.3764412
+  }
+]
