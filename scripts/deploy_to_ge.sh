@@ -24,13 +24,11 @@ agents-cli deploy \
   --project="${PROJECT_ID}" \
   --region="${REGION}" \
   --deployment-target=agent_runtime \
-  --no-confirm-project
+  --no-confirm-project \
+  --update-env-vars "GOOGLE_CLOUD_LOCATION=${REGION},LOCATION=${REGION}"
 
-echo "=== 3. Registering Agent with Gemini Enterprise ==="
-# Auto-detects the newly deployed reasoning engine ID from 'deployment_metadata.json'
-# and registers it natively with the Gemini Enterprise App.
-agents-cli publish gemini-enterprise \
-  --gemini-enterprise-app-id="${GE_APP_ID}" \
-  --display-name="${DISPLAY_NAME}"
+# agents-cli publish gemini-enterprise \
+#   --gemini-enterprise-app-id="${GE_APP_ID}" \
+#   --display-name="${DISPLAY_NAME}"
 
-echo "=== Deployment & Publishing Completed Successfully! ==="
+echo "=== Deployment Completed. Run manual registration script next. ==="

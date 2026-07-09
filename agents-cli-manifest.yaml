@@ -10,5 +10,5 @@ create_params:
   cicd_runner: skip
   include_data_ingestion: false
   datastore: none
-  agent_guidance_filename: GEMINI.md
+  agent_guidance_filename: AGENTS.md
   is_a2a: true

@@ -1,0 +1,47 @@
+{
+  "name": "Party Store Supply Chain Agent",
+  "description": "AI Agent that assists with supply chain planning, monitoring stock levels, analyzing demand, and purchasing inventory.",
+  "url": "https://party-store-ge-a2ui-679926387543.us-east1.run.app/a2a/app",
+  "version": "1.0.0",
+  "protocolVersion": "0.3.0",
+  "preferredTransport": "HTTP+JSON",
+  "defaultInputModes": [
+    "text/plain"
+  ],
+  "defaultOutputModes": [
+    "text/plain"
+  ],
+  "capabilities": {
+    "streaming": false,
+    "extensions": [
+      {
+        "uri": "https://a2ui.org/a2a-extension/a2ui/v0.8",
+        "description": "Ability to render A2UI",
+        "required": false,
+        "params": {
+          "supportedCatalogIds": [
+            "https://a2ui.org/specification/v0_8/standard_catalog_definition.json"
+          ]
+        }
+      }
+    ]
+  },
+  "skills": [
+    {
+      "id": "manage_supply_chain",
+      "name": "Party Store Supply Chain Management",
+      "description": "Manages supply chain operations, queries inventory levels, checks sales forecasts, and creates purchase orders.",
+      "tags": [
+        "supply-chain",
+        "inventory",
+        "forecast",
+        "procurement"
+      ],
+      "examples": [
+        "Show inventory status",
+        "Show sales forecast for halloween_costume",
+        "Order 500 birthday candles"
+      ]
+    }
+  ]
+}
