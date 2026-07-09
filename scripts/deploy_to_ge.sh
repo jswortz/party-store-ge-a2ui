@@ -1,4 +1,4 @@
-#!/bin/bash
+s#!/bin/bash
 # Scripts to deploy the Party Store Supply Chain Agent to Vertex AI Agent Runtime
 # and register it in the Gemini Enterprise App.
 #
