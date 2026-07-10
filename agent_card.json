@@ -4,12 +4,13 @@
   "url": "https://party-store-ge-a2ui-679926387543.us-east1.run.app/a2a/app",
   "version": "1.0.0",
   "protocolVersion": "0.3.0",
-  "preferredTransport": "HTTP+JSON",
+  "preferredTransport": "JSONRPC",
   "defaultInputModes": [
     "text/plain"
   ],
   "defaultOutputModes": [
-    "text/plain"
+    "text/plain",
+    "application/json"
   ],
   "capabilities": {
     "streaming": false,
@@ -21,7 +22,8 @@
         "params": {
           "supportedCatalogIds": [
             "https://a2ui.org/specification/v0_8/standard_catalog_definition.json"
-          ]
+          ],
+          "acceptsInlineCatalogs": true
         }
       }
     ]

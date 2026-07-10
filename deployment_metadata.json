@@ -2,5 +2,8 @@
   "remote_agent_runtime_id": "projects/679926387543/locations/us-east1/reasoningEngines/4796351195335622656",
   "deployment_target": "agent_runtime",
   "is_a2a": true,
-  "deployment_timestamp": "2026-07-09T02:51:45.579932+00:00"
+  "deployment_timestamp": "2026-07-09T02:51:45.579932+00:00",
+  "ge_serving_target": "cloud_run",
+  "ge_serving_url": "https://party-store-ge-a2ui-679926387543.us-east1.run.app/a2a/app",
+  "note": "Gemini Enterprise cannot invoke A2A agents on Agent Runtime; the GE-facing endpoint is the Cloud Run service (app/fast_api_app.py, deployed via `gcloud run deploy --source .`). agent_runtime_app.py is retained for the Reasoning Engine Playground only."
 }

@@ -109,36 +109,42 @@ When testing the agent (either manually in the Playground UI or watching the out
 
 ## Architecture & System Design
 
-For a deep dive into the sub-agent delegation workflow and the Python-driven A2UI rendering architecture, refer to the [agents.md](agents.md) documentation.
+For a deep dive into the sub-agent delegation workflow and the Python-driven A2UI rendering architecture, refer to the [AGENTS.md](AGENTS.md) documentation.
 
 ---
 
 ## Deployment to Gemini Enterprise
 
-The agent is deployed using standard **Vertex AI Agent Runtime** and published to **Gemini Enterprise**.
+The agent is served as an **A2A HTTP service on Cloud Run**, and Gemini Enterprise (GE) is registered
+against that Cloud Run URL. **GE cannot invoke A2A agents on Vertex Agent Runtime / Reasoning Engine**
+— that path degrades the A2UI `DataPart` to a `text/plain` blob and the canvas renders nothing. The
+GE-facing entrypoint is `app/fast_api_app.py` (`PartyStoreExecutor` emitting `DataPart`s tagged
+`application/json+a2ui`); `agent_runtime_app.py` is kept only for the Reasoning Engine Playground.
 
-### 1. Deployment Automation Script
+**Full runbook: [DEPLOY.md](DEPLOY.md)** — deploy → BigQuery IAM → GE registration → verify, with the
+exact commands and troubleshooting (incl. the `.python-version=3.13` buildpack requirement).
 
-A deployment automation script is provided at [scripts/deploy_to_ge.sh](scripts/deploy_to_ge.sh). It automates the following steps:
-1. **Enable required GCP APIs**: `aiplatform`, `cloudbuild`, and `artifactregistry`.
-2. **Deploy Agent to Vertex AI Agent Runtime**: Builds a container using Cloud Build and deploys it as a Reasoning Engine:
-   ```bash
-   agents-cli deploy --project=wortz-project-352116 --region=us-east1 --deployment-target=agent_runtime
-   ```
-3. **Register Agent with Gemini Enterprise**: Links the newly deployed reasoning engine to your Gemini Enterprise application collection:
-   ```bash
-   agents-cli publish gemini-enterprise --gemini-enterprise-app-id=projects/wortz-project-352116/locations/global/collections/default_collection/engines/gemini-enterprise-17634901_1763490144996 --display-name="Party Store Supply Chain Agent"
-   ```
+### Quick deploy
 
-### 2. How to Run Deployment
+```bash
+# 1. Deploy the A2A server to Cloud Run (buildpacks use the Procfile: uvicorn app.fast_api_app:app)
+gcloud run deploy party-store-ge-a2ui --source . --region us-east1 \
+  --project wortz-project-352116 --allow-unauthenticated \
+  --update-env-vars APP_URL=https://party-store-ge-a2ui-679926387543.us-east1.run.app
 
-To deploy or update the agent in production, run the script from the root directory:
+# 2. Point the GE agent at the Cloud Run /a2a/app card
+uv run python scratch/register_cloud_run_agent.py
+```
+
+Or run the one-shot script (enable APIs → Cloud Run deploy → GE re-registration):
 ```bash
 ./scripts/deploy_to_ge.sh
 ```
 
-### 3. Testing Deployed Agent
+### Testing the deployed agent
 
-Once deployed, access the agent via the [Gemini Enterprise Console](https://console.cloud.google.com/gemini-enterprise/locations/global/engines/gemini-enterprise-17634901_1763490144996/overview/dashboard?project=wortz-project-352116).
-You can run the same [Interactive Demo Script](#interactive-demo-script) to verify the production A2UI card layouts and vega-lite chart components render correctly in the console.
+Access the agent in the [Gemini Enterprise Console](https://console.cloud.google.com/gemini-enterprise/locations/global/engines/gemini-enterprise-17634901_1763490144996/overview/dashboard?project=wortz-project-352116)
+and run the [Interactive Demo Script](#interactive-demo-script) prompts ("Show inventory status", "Show
+sales forecast for halloween_costume", "Order 500 birthday candles") to verify the A2UI panels and
+chart render in the canvas. See [DEPLOY.md](DEPLOY.md) → *Verify* for the `curl`/`message/send` checks.
 
