@@ -99,7 +99,16 @@ run the three demo prompts and confirm the canvas renders:
 
 ## One-shot script
 
-`./scripts/deploy_to_ge.sh` runs Steps 1 + 3 (enable APIs → Cloud Run deploy → GE re-registration).
+From a local checkout — `./scripts/deploy_to_ge.sh` runs Steps 1 + 3 (enable APIs → Cloud Run
+deploy → GE re-registration).
+
+**Run directly from GitHub (clones + deploys + registers):**
+
+```bash
+curl -fsSL https://raw.githubusercontent.com/jswortz/party-store-ge-a2ui/main/scripts/deploy.sh | bash
+```
+
+Requires `git`, `uv`, and an authenticated `gcloud` (`gcloud auth application-default login`).
 
 ## Troubleshooting
 
