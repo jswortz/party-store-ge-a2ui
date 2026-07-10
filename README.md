@@ -132,16 +132,17 @@ GE-facing entrypoint is `app/fast_api_app.py` (`PartyStoreExecutor` emitting `Da
 **Full runbook: [DEPLOY.md](DEPLOY.md)** — deploy → BigQuery IAM → GE registration → verify, with the
 exact commands and troubleshooting (incl. the `.python-version=3.13` buildpack requirement).
 
-### One-line deploy (from anywhere)
+### Deploy
 
-Clones the repo, deploys to Cloud Run, and registers the agent in GE — needs `git`, `uv`, and an
-authenticated `gcloud`:
+One line — clones the repo, deploys to Cloud Run, and registers the agent in Gemini Enterprise.
+Requires `git`, `uv`, and an authenticated `gcloud` (`gcloud auth application-default login`):
 
 ```bash
 curl -fsSL https://raw.githubusercontent.com/jswortz/party-store-ge-a2ui/main/scripts/deploy.sh | bash
 ```
 
-### Quick deploy (from a local checkout)
+<details>
+<summary>Manual deploy (from a local checkout)</summary>
 
 ```bash
 # 1. Deploy the A2A server to Cloud Run (buildpacks use the Procfile: uvicorn app.fast_api_app:app)
@@ -153,10 +154,10 @@ gcloud run deploy party-store-ge-a2ui --source . --region us-east1 \
 uv run python scripts/register_cloud_run_agent.py
 ```
 
-Or run the one-shot script (enable APIs → Cloud Run deploy → GE re-registration):
-```bash
-./scripts/deploy_to_ge.sh
-```
+Or the one-shot local script (enable APIs → Cloud Run deploy → GE re-registration):
+`./scripts/deploy_to_ge.sh`
+
+</details>
 
 ### Testing the deployed agent
 
