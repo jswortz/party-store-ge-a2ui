@@ -47,7 +47,7 @@ The GE-facing path is a **deterministic A2A executor on Cloud Run**, NOT the ADK
   --allow-unauthenticated`. Requires `.python-version` = `3.13` (the buildpack offers only 3.13/3.14
   and `litellm` caps at `<3.14`).
 - **Register in GE:** the agent card `url` must be the Cloud Run `/a2a/app` endpoint (see
-  `scratch/register_cloud_run_agent.py`). **GE cannot invoke A2A agents on Vertex Agent Runtime** —
+  `scripts/register_cloud_run_agent.py`). **GE cannot invoke A2A agents on Vertex Agent Runtime** —
   that path degrades the A2UI DataPart to a `text/plain` blob GE won't render.
 - The LLM path (`agent.py` + `a2ui_plugin.py` + `send_a2ui_json_to_client`) and `agent_runtime_app.py`
   are kept for the Reasoning Engine Playground only; the tools' payload builders are shared by both.

@@ -12,12 +12,20 @@ The agent helps store managers query current inventory levels, inspect sales for
 party-store-ge-a2ui/
 ├── app/                        # Core agent code
 │   ├── agent.py                # Agent & Sub-agent definitions and prompts
-│   ├── tools.py                # BigQuery tools & A2UI layout generation
+│   ├── agent_executor.py       # Deterministic A2A executor (GE-facing, emits A2UI DataParts)
+│   ├── fast_api_app.py         # A2A HTTP server (Cloud Run entrypoint)
+│   ├── ui_builder.py           # Festive WebFrameSrcdoc panels (inventory/forecast/PO)
+│   ├── tools.py                # BigQuery tools & A2UI payload builders
 │   └── ui_examples/            # A2UI Layout spec files (v0.8 format)
-├── scratch/
+├── scripts/
+│   ├── deploy_to_ge.sh         # Cloud Run deploy + GE registration
+│   ├── register_cloud_run_agent.py  # Point GE at the Cloud Run /a2a/app card
+│   ├── list_registered_agents.py    # Inspect GE agent registrations
+│   ├── generate_data.py        # Populate mock BigQuery party_store tables
 │   ├── test_api.py             # 3-turn async API integration test script
-│   └── setup_bigquery_tables.py # Helper script to populate mock BQ tables
-├── agents.md                   # System design & Agent orchestration docs
+│   └── ui_critic/              # Demo-impact critic flywheel (render + vision critique)
+├── AGENTS.md                   # System design & Agent orchestration docs
+├── DEPLOY.md                   # Deployment runbook (Cloud Run → GE)
 ├── README.md                   # Setup and usage guide (this file)
 └── pyproject.toml              # Project dependencies
 ```
@@ -58,7 +66,7 @@ agents-cli install
 
 Run the helper script to create the `party_store` dataset and populate the `shipments` and `orders` tables in BigQuery:
 ```bash
-uv run scratch/setup_bigquery_tables.py
+uv run scripts/generate_data.py
 ```
 
 ---
@@ -78,7 +86,7 @@ Once the server starts, open the Dev UI URL in your browser:
 
 Run the pre-configured 3-turn async test client to simulate a full conversation flow against the local FastAPI server:
 ```bash
-uv run scratch/test_api.py
+uv run scripts/test_api.py
 ```
 
 ---
@@ -133,7 +141,7 @@ gcloud run deploy party-store-ge-a2ui --source . --region us-east1 \
   --update-env-vars APP_URL=https://party-store-ge-a2ui-679926387543.us-east1.run.app
 
 # 2. Point the GE agent at the Cloud Run /a2a/app card
-uv run python scratch/register_cloud_run_agent.py
+uv run python scripts/register_cloud_run_agent.py
 ```
 
 Or run the one-shot script (enable APIs → Cloud Run deploy → GE re-registration):

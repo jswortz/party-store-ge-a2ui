@@ -65,9 +65,9 @@ async def run_conversation():
         print("Turn 2 Status Code:", resp2.status_code)
         try:
             events = resp2.json()
-            with open("scratch/turn2_events.json", "w") as f:
+            with open("/tmp/turn2_events.json", "w") as f:
                 json.dump(events, f, indent=2)
-            print("Turn 2 events dumped to scratch/turn2_events.json")
+            print("Turn 2 events dumped to /tmp/turn2_events.json")
             for event in events:
                 if event.get("content"):
                     for part in event["content"].get("parts", []):
@@ -95,9 +95,9 @@ async def run_conversation():
         print("Turn 3 Status Code:", resp3.status_code)
         try:
             events = resp3.json()
-            with open("scratch/turn3_events.json", "w") as f:
+            with open("/tmp/turn3_events.json", "w") as f:
                 json.dump(events, f, indent=2)
-            print("Turn 3 events dumped to scratch/turn3_events.json")
+            print("Turn 3 events dumped to /tmp/turn3_events.json")
             for event in events:
                 if event.get("content"):
                     for part in event["content"].get("parts", []):

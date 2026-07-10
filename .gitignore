@@ -206,3 +206,8 @@ tools/a2a-inspector/
 # UI critic flywheel outputs (regenerable)
 scratch/ui_critic/shots/
 scratch/ui_critic/reports/
+
+# UI critic generated artifacts (regenerable)
+scripts/ui_critic/shots/
+scripts/ui_critic/reports/
+scripts/ui_critic/__pycache__/

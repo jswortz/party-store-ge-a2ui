@@ -37,8 +37,8 @@ gcloud run deploy "${SERVICE}" \
 
 echo "=== 3. Registering the Cloud Run card in Gemini Enterprise ==="
 # Fetches the deployed /a2a/app card (JSONRPC + A2UI v0.8 extension) and PATCHes the GE agent
-# registration so GE targets the Cloud Run URL. See scratch/register_cloud_run_agent.py.
-uv run python scratch/register_cloud_run_agent.py
+# registration so GE targets the Cloud Run URL. See scripts/register_cloud_run_agent.py.
+uv run python scripts/register_cloud_run_agent.py
 
 echo "=== Deployment complete. Verify per DEPLOY.md (Step 4). ==="
 echo "Service URL: ${APP_URL}/a2a/app"
